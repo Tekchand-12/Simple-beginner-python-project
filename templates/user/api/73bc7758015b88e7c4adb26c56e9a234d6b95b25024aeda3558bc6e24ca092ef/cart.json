@@ -1,0 +1,10 @@
+{
+    "Products": [
+        {
+            "url": "http://192.168.56.101:7870/static/products/l1.webp", 
+            "Price": "Rs.25000", 
+            "name": "Mi Notebook 14 Intel Core i5-10210U 10th Gen Thin and Light Laptop(8GB/512GB SSD/Windows 10/Intel UHD Graphics/Silver/1.5Kg), XMA1901-FA Webcam", 
+            "quantity": "4"
+        }
+    ]
+}

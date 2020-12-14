@@ -1,0 +1,16 @@
+{
+    "Products": [
+        {
+            "url": "http://192.168.56.101:7870/static/products/l1.webp", 
+            "Price": 50000, 
+            "name": "Mi Notebook 14 Intel Core i5-10210U 10th Gen Thin and Light Laptop(8GB/512GB SSD/Windows 10/Intel UHD Graphics/Silver/1.5Kg), XMA1901-FA Webcam", 
+            "quantity": 14
+        }, 
+        {
+            "url": "http://192.168.56.101:7870/static/products/l2.jfif", 
+            "Price": 40000, 
+            "name": "ASUS TUF Gaming FX505DT 15.6 FHD 120Hz Laptop GTX 1650 4GB Graphics (Ryzen 5-3550H/8GB RAM/512GB PCIe SSD/Windows 10/Stealth Black/2.20 Kg), FX505DT-AL106T", 
+            "quantity": 10
+        }
+    ]
+}

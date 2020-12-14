@@ -1,0 +1,930 @@
+<html>
+<head>
+	<title> About us </title>
+	<link  rel="icon"href="/static/logo.png" type="image/png">
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+ <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+</script>
+
+<script>
+	
+	function listener()
+		{
+			
+
+			var newdrop=document.getElementById("dropdownmobile");
+			newdrop.setAttribute("class","collapse navbar-collapse");
+
+			var dropinside=document.createElement("ul");
+			dropinside.setAttribute("class","nav navbar-nav");
+			var dropitems1=document.createElement("li");
+			var firstdrop1=document.createElement("a");
+			firstdrop1.setAttribute("href","index.html");
+			var firsttextnode1=document.createTextNode("Home");
+			firstdrop1.appendChild(firsttextnode1);
+			dropitems1.appendChild(firstdrop1);
+			dropinside.appendChild(dropitems1);
+
+			var dropitems2=document.createElement("li");
+			var firstdrop2=document.createElement("a");
+			firstdrop2.setAttribute("href","prodcuts.html");
+			var firsttextnode2=document.createTextNode("Product");
+			firstdrop2.appendChild(firsttextnode2);
+			dropitems2.appendChild(firstdrop2);
+			dropinside.appendChild(dropitems2);
+
+			var dropitems3=document.createElement("li");
+			var firstdrop3=document.createElement("a");
+			firstdrop3.setAttribute("href","about.html");
+			var firsttextnode3=document.createTextNode("Aboutus");
+			firstdrop3.appendChild(firsttextnode3);
+			dropitems3.appendChild(firstdrop3);
+			dropinside.appendChild(dropitems3);
+
+
+			var dropitems4=document.createElement("li");
+			var firstdrop4=document.createElement("a");
+			firstdrop4.setAttribute("href","login.html");
+			var firsttextnode4=document.createTextNode("Login");
+			firstdrop4.appendChild(firsttextnode4);
+			dropitems4.appendChild(firstdrop4);
+			dropinside.appendChild(dropitems4);
+
+			var dropitems5=document.createElement("li");
+			var firstdrop5=document.createElement("a");
+			firstdrop5.setAttribute("href","register.html");
+			var firsttextnode5=document.createTextNode("Signup");
+			firstdrop5.appendChild(firsttextnode5);
+			dropitems5.appendChild(firstdrop5);
+			dropinside.appendChild(dropitems5);
+
+
+			var dropitems6=document.createElement("li");
+			var firstdrop6=document.createElement("a");
+			firstdrop6.setAttribute("href","contact.html");
+			
+			var firsttextnode6=document.createTextNode("Contact us");
+			firstdrop6.appendChild(firsttextnode6);
+			dropitems6.appendChild(firstdrop6);
+			dropinside.appendChild(dropitems6);
+			
+			newdrop.appendChild(dropinside);
+
+
+		}
+		$(window).on("load resize unload",function()
+		{
+			if(navigator.userAgent.match('Android'))
+			{
+				$("#headerbar").hide();
+				$("#togglebutton").show();
+				$('body').css('background-size','1100px 500px');
+			}
+			else
+			{
+				if(window.innerWidth <= 701 && window.innerWidth >= 501)
+				{
+					$("#headerbar").hide();
+					$("#togglebutton").show();
+					$('body').css('background-size','800px 500px');
+					document.getElementById("videohandler").style.width="500px";
+					document.getElementById("videohandler").style.width="500px";
+
+
+
+				}
+				else if(window.innerWidth <=500 )
+				{
+					$("#headerbar").hide();
+					$("#togglebutton").show();
+					$('body').css('background-size','500px 600px');
+					document.getElementById("videohandler").style.width="350px";
+					document.getElementById("videohandler").style.height="350px";
+
+				}
+				else
+				{
+					$("#headerbar").show();
+					$("#togglebutton").hide();
+
+					document.getElementById("videohandler").style.width="1000px";
+					document.getElementById("videohandler").style.height="500px";
+				}
+			}
+		});
+	
+	$(document).ready(function()
+	{
+		
+		$(function()
+		{
+			AOS.init();
+		});
+		var t1=5;
+		let p2;
+		var myarr=['Laptop','Laptops','Printer','printer','Printers','printers','MobilePhone','Computer','computer',"backcard"]
+
+		$("#mysearch").on("keyup",function()
+		{
+			document.getElementById("responseul").innerHTML="";
+			var datasend=$("#mysearch").val();
+			var tester=datasend.toString();
+
+			if(tester!='')
+			{
+
+				$.ajax({
+					url:"http://192.168.56.101:7870/product.json?q="+datasend,
+					method:"get",
+					cache:false,
+					success:function(response,statusText)
+					{
+						
+						myobj=JSON.parse(response);
+						
+						if(datasend == "samsung"||datasend=="Samsung")
+						{
+							t1=Object.keys(myobj.products.MobilePhone.Samsung);
+						}
+						else if(datasend == "apple"||datasend=="Apple")
+						{
+							t1=Object.keys(myobj.products.MobilePhone.apple);
+						}
+						else if(datasend == "computer" || datasend == "Computer")
+						{
+							t1=Object.keys(myobj.products.Computer);
+						}
+						else if(datasend == "MobilePhone" || datasend == "mobilephone")
+						{
+							t1=Object.keys(myobj.products.MobilePhone);
+						}
+						else if(datasend == "vivo"||datasend=="Vivo")
+						{
+							t1=Object.keys(myobj.products.MobilePhone.vivo);
+						}
+						else if(datasend == "Laptop" || datasend == "laptop")
+						{
+							t1=Object.keys(myobj.products.Laptop);
+						}
+						else if(datasend == "Printers" || datasend == "printers")
+						{
+							t1=Object.keys(myobj.products.Printers);
+						}
+						else
+						{							
+								if(datasend in myobj.products.Laptop)
+								{
+									p1=datasend;
+									p2=myobj.products.Laptop;
+								}
+								else if(datasend in myobj.products.MobilePhone.Samsung)
+								{
+									p1=datasend;
+									p2=myobj.products.MobilePhone.Samsung;
+								}
+								else if(datasend in myobj.products.MobilePhone.apple)
+								{
+									p1=datasend;
+									p2=myobj.products.MobilePhone.apple;
+								}
+								else if(datasend in myobj.products.MobilePhone.vivo)
+								{
+									p1=datasend;
+									p2=myobj.products.MobilePhone.vivo
+								}
+								else if(datasend in myobj.products.Printers)
+								{
+									p1=datasend;
+									p2=myobj.products.Printers;
+								}
+								else if(datasend in myobj.products.Computer)
+								{
+									p1=datasend;
+									p2=myobj.products.Computer
+								}
+								else
+								{
+								}
+							
+						}
+						var responselist,n;
+						
+						var  listchecker=document.getElementById("responseul").style.float="center";
+						if(t1!=5)
+						{
+							let childtesting=document.getElementById("responseul");
+							if(childtesting.firstChild)
+							{
+							while(childtesting.firstChild)
+							{
+								childtesting.removeChild(childtesting.firstChild);
+							}
+						}
+							document.getElementById("responseul").style.overflow="auto";
+							document.getElementById("responseul").style.height="300px";
+							for(var u=0; u<=t1.length-1;u++)
+							{
+							var listappend=document.createElement("li");
+							listappend.setAttribute("style","list-style:none;");
+							listappend.setAttribute("class","nav-item");
+
+							var firstitem=document.createElement("a");
+							firstitem.setAttribute("class","nav-link");
+							firstitem.setAttribute("href","#")
+							var firsttext=document.createTextNode(t1[u]);
+							firstitem.appendChild(firsttext);
+							listappend.appendChild(firstitem);
+							$("#responseul").append(listappend);
+							$("#responseul").show();
+
+							}
+						}
+						else if(p1)
+						{
+							document.getElementById("responseul").style.removeProperty("overflow");
+							document.getElementById("responseul").style.removeProperty("height");
+							let childgoli=document.getElementById("responseul");
+							if(childgoli.firstChild)
+							{
+							while(childtesting.firstChild)
+							{
+								childtesting.removeChild(childgoli.firstChild);
+							}
+							}
+							
+
+							var oldlengths=document.getElementById("responseul");
+							var listappend=document.createElement("li");
+							listappend.setAttribute("style","list-style:none;");
+							listappend.setAttribute("class","nav-item");
+
+							var firstitem=document.createElement("a");
+							firstitem.setAttribute("class","nav-link");
+							firstitem.setAttribute("href","#")
+							var firsttext=document.createTextNode(p1);
+							firstitem.appendChild(firsttext);
+							listappend.appendChild(firstitem);
+							$("#responseul").append(listappend);
+							$("#responseul").show();
+	
+						}
+						else
+						{
+							alert();
+						
+							let childtesting=document.getElementById("responseul");
+							while(childtesting.firstChild)
+							{
+								childtesting.removeChild(childtesting.firstChild);
+							}
+
+							document.getElementById("responseul").style.removeProperty="overflow";
+							document.getElementById("responseul").style.removeProperty="300px";
+
+							var listappend=document.createElement("li");
+							listappend.setAttribute("style","list-style:none;");
+							listappend.setAttribute("class","nav-item");
+
+							var firstitem=document.createElement("span");
+							firstitem.setAttribute('style','font-style:italic;color:#9CA9AA');
+							var firsttext=document.createTextNode("Not Found");
+							firstitem.appendChild(firsttext);
+							listappend.appendChild(firstitem);
+							$("#responseul").append(listappend);
+							$("#responseul").show();
+							
+						}
+
+					},
+					error:function(error)
+					{
+						alert(error);
+					}
+
+				});
+			}
+			else
+			{
+				$(document).ajaxStop(function()
+				{
+					$("#responseul").hide();
+				});
+			}
+			});
+
+		$("#mysearch").on("click",function()
+		{
+			$("#mylist").css('display','inline-block');
+			$("#responseul").hide();
+			if($("#mysearch").val()!="")
+			{
+				$("#mylist").css('display','block');
+				$("#responseul").show();
+			}
+		
+		});
+		$("body").on('click',function()
+		{
+			$("#responseul").hide();
+							
+		});
+
+
+
+		$("#mysearch").on('keyup',function()
+		{
+			
+			if(document.getElementById("responseul").firstElementChild)
+			{
+				document.getElementById("responseul").innerHTML="";				
+			}
+
+			$("#responseul").css("display","block")
+				
+			if($("#mysearch").val()!='')
+			{
+
+				$("#mylist").hide();
+				$("#responseul").css("display","block");
+			}
+			else
+			{
+				//$("#responseul").css("display","none");
+				document.getElementById("responseul").style.removeProperty("height");
+				document.getElementById("responseul").style.removeProperty("overflow");
+				var moli=document.getElementById("responseul");
+				while(moli.firstChild)
+				{
+					moli.removeChild(moli.firstChild);
+				}
+
+				$("#mylist").show();
+			}
+			
+		});
+
+		$("#mylist").mouseleave(function()
+		{
+			$("#mylist").hide();
+		});
+		if(!$("mysearch").text=='')
+		{
+			$("#mylist").hide();
+		}
+	
+		$("#mylist").on('click','li',function()
+		{
+			$("#responsejumbo").remove();
+		});
+		$("#myul").on("click","button",function()
+		{
+			var userrequest=$("button").val();
+			alert(userequest);
+			if($("#mysearch").val(userrequest))
+			{
+				$("#myul").hide();
+				
+			}
+			else if($("#mysearch").click())
+			{
+				$("#myul").show();
+			}
+			else if($("#mysearch").val()!='')
+			{
+				$("#myul").show();
+			}
+			else
+			{
+				$("#myul").show();
+			}
+		});
+
+		
+		$("#responseul").on('click','li',function()
+		{
+
+			$("#mysearch").val($(this).text());
+			$("#responseul").hide();
+
+		});
+		
+		$(document).on('scroll',function()
+		{
+			if($(document).scrollTop() > 200)
+			{
+				$("#navigation").css("background-color","blue");
+				$(".nav nav-pills").css("color","blue");
+			}
+			else
+			{
+				$("#navigation").css("background-color","transparent");
+				$(".nav nav-pills").css("color","white");	
+
+			}
+		});
+		$("#responseul,#mylist").on('click','li',function()
+		{
+			var searchvalue=$(this).text();
+			var mystripdata=searchvalue.replace(/\s/g,"");
+			$("#mysearch").val(mystripdata);
+			$("#mylist").hide();
+
+
+			$.ajax
+			({
+
+				url:"http://192.168.56.101:7870/product.json?query="+mystripdata,
+				method:'get',
+				cache:false,
+				success:function(response,statusText)
+				{
+					var ajaxhandler=document.getElementById("ajaxsearch");
+					var columstest=document.createElement("div");
+					columstest.setAttribute("class","col-lg-12");
+					columstest.setAttribute("id","oldcolumn");
+					ajaxhandler.setAttribute("class","row");
+					ajaxhandler.appendChild(columstest);
+
+					var jumbocreate=document.createElement("div");
+					jumbocreate.setAttribute("class","jumbotron");
+					jumbocreate.setAttribute('id','responsejumbo');
+					jumbocreate.setAttribute("style","background-color:white");
+					columstest.appendChild(jumbocreate);
+
+				
+					var centertag=document.createElement("center");
+					jumbocreate.appendChild(centertag);
+
+					var loader=document.createElement("img");
+					loader.setAttribute("src","static/listlogo/loading.gif");
+					loader.setAttribute("id","loadingimage");
+					centertag.appendChild(loader);
+
+
+					var a=1;
+
+					function configuration(imagesource,partyname,partyvalue)
+					{
+						var myrow=document.getElementById('responsejumbo');
+								var sidefloter=document.createElement("img");
+								if($("#mysearch").val() == "MobilePhone")
+								{
+									mydivhandler=document.createElement("div");									
+									sidefloter.setAttribute("src",imagesource);
+									sidefloter.setAttribute("style","height:300px;width:1000px; border-radius:25px;");
+									mydivhandler.id="respimage"+a;
+									a=a+1;
+
+									sidefloter.class="img-fluid justify-content-center";
+									var mybreaker=document.createElement("br");
+									myrow.appendChild(mybreaker);
+									mydivhandler.appendChild(sidefloter);
+									myrow.appendChild(mydivhandler);
+								}
+								else
+								{
+								sidefloter.setAttribute("src",imagesource);
+								sidefloter.setAttribute("style","height:350px;width:350px;display:inline-block;");
+								sidefloter.setAttribute("class","img-fluid");
+								myrow.appendChild(sidefloter);
+
+								var pricebreaker=document.createElement("br");
+								var pricetext=document.createTextNode("Rs.  ");
+								
+
+								var buttoncreater=document.createElement("button");
+								buttoncreater.setAttribute("style","position:relative;float:right;background-color:#40B0D1;color:white;width:300px;display:inline-block;top:100px;");
+								buttoncreater.setAttribute("class","btn btn-lg btn-default");
+								var textcreater=document.createTextNode("Add to Cart");
+								buttoncreater.appendChild(textcreater);
+								myrow.appendChild(buttoncreater);
+								
+							
+								var namerecv=document.createElement("span");
+								namerecv.setAttribute("style",'font-style:italic;font-size:25px;');
+								var namestyle=document.createTextNode(partyname);
+								namerecv.appendChild(namestyle);
+								var pricename=document.createTextNode(partyvalue);
+				
+								myrow.appendChild(namerecv);
+								myrow.appendChild(pricebreaker);
+								myrow.appendChild(pricetext);
+								myrow.appendChild(pricename);
+								
+								var underline=document.createElement("hr");
+								underline.setAttribute("style","font-weight:bold;");
+								myrow.appendChild(underline);
+							}
+							$("#respimage3,#respimage2,#respimage1").each(function()
+							{
+
+								$(this).attr("data-aos","zoom-in")
+								$(this).attr("data-aos-duration","0");
+							});
+							$("#respimage1,#respimage2,#respimage3").on('mouseover',function()
+							{
+								$(this).first().css("opacity","0.2");
+								var respbutton=document.createElement("button");
+								respbutton.class="btn btn-default btn-lg";
+
+								var textnode=document.createTextNode("ShopNow");
+								respbutton.appendChild(textnode);
+								$(this).first().append(respbutton);
+								
+
+							});
+					
+							$("#respimage1,#respimage2,#respimage3").on('mouseover',function()
+							{
+								$(this).first().css("opacity","0.2");
+								var respbutton=document.createElement("button");
+								respbutton.class="btn btn-default btn-lg";
+
+								var textnode=document.createTextNode("ShopNow");
+								respbutton.appendChild(textnode);
+								$(this).first().append(respbutton);
+
+								
+
+							});
+							$("#respimage1,#respimage2,#respimage3").on('mouseleave',function()
+							{
+								$(this).first().css("opacity","");
+								$(this).find('button').remove();
+								
+							});
+
+							if($(this).first().next().nextAll() > 1)
+							{
+								$(this).first().next().nextAll().remove();
+							}
+		
+					}
+
+					$("#myspinner,#textsearch").css("display","block");
+					setTimeout(function(){$("#myspinner,#textsearch").css("display","none");},3000);
+					setTimeout(function(){$("#loadingimage").css("display","none");},3000);
+					if(myarr.includes(mystripdata))
+					{
+						setTimeout(function()
+						{
+							var convertresponse=JSON.parse(response);
+							var myvalue=$("#mysearch").val().trim();
+							if($("#mysearch").val() == "MobilePhone")
+							{
+								mygetter=myarr.indexOf("backcard");
+								myvalue=myarr[mygetter];
+							}
+							var mykeys=Object.keys(convertresponse.products[myvalue]);
+							var myvalues=Object.values(convertresponse.products[myvalue]);
+						
+							if(myvalue == "backcard")
+							{
+								for(var metergoli=0;metergoli<=mykeys.length;metergoli++)
+								{
+									configuration(myvalues[metergoli].image,"","");
+								}
+								
+							}
+							else
+							{
+							for(var gulli=0;gulli<=mykeys.length;gulli++)
+							{	
+								
+								configuration(myvalues[gulli].image,mykeys[gulli],myvalues[gulli].Price);
+							}
+							}
+															
+						},3000);
+					
+					setTimeout(function(){document.getElementById("cartbutton").style.display="block";},3000);
+					setTimeout(function(){$("body").animate({scrollTop:'600'});},3000);
+			
+					}
+					else
+					{
+						document.getElementById("responsejumbo").remove();
+						var mytestingdata=Object.keys(p2[mystripdata]);
+						var imagevalue=Object.values(p2[mystripdata].image).toString().replace(/,/g,"");						
+						var testingdatavalue=Object.values(p2[mystripdata].Price).toString().replace(/,/g,"");
+						
+						configuration(imagevalue,searchvalue,testingdatavalue);
+						
+						setTimeout(function(){document.getElementById("cartbutton").style.display="block";},3000);
+						setTimeout(function(){$("body").animate({scrollTop:'600'});},3000);
+						$("#responseul").empty();		
+					}
+				}
+			});
+			
+		});
+		
+	if(document.getElementById("mysearch").value == "")
+	{
+		document.getElementById("resposneul").style.display="none";
+	}
+
+});
+</script>
+<style>
+	
+	#mylist
+	{
+		list-style:none; 
+		display:inline-block; 
+		position:relative; 
+		width:550px;
+		top:400px;
+		text-align:justify;
+		background-color:#E7DCDA;
+
+	}
+	#mylist li:hover
+	{
+		background-color:#DCD8D7;
+
+	}
+	
+	#firstlist
+	{
+		position:relative;
+		float:right;
+		display:inline-block;
+	}
+	#myspinner,#textsearch
+	{
+		display:none;
+	}
+	#secondlist
+	{
+		position:relative;
+		float:right;
+		display:inline-block;
+	}
+	#thirdlist
+	{
+
+		position:relative;
+		float:right;
+		display:inline-block;
+	}
+	#fourthlist
+	{
+
+		position:relative;
+		float:right;
+		display:inline-block;
+	}
+	#responseul li:hover
+	{
+		background-color:#DCD8D7;
+	}
+	#fifthlist
+	{
+		position:relative;
+		display:inline-block;
+		float:right;
+	}
+	#os
+	{
+		color:green;
+		display:inline-block;
+		float:left;
+		font-size:25px;
+		position:relative;
+	}
+	#disableitem
+	{
+		color:red;
+		display:inline-block;
+		float:left;
+		font-size:25px;
+		position:relative;
+	}
+	#third
+	{
+		position:relative;
+		float:right;
+	}
+	
+</style>
+
+
+<body style="background-image:url('static/team/about.jpg'); overflow-x:hidden; background-repeat:no-repeat;" onselectstart="return false;">
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-lg-12">
+			<nav class="navbar navbar-light fixed-top" style="opacity:-2px" id="navigation">
+					<div class="navbar-brand" style="font-style:italic;">
+						<a href="#" clas="btn" id="0" style="border-radius:300px;font-style:italic; color:orange;border-radius:10px;"><b>OnlineShopping</b></a>
+					</div>
+
+					<div id="dropdownmobile"></div>
+					<ul class="nav nav-pills" id="headerbar">
+						<li class="nav-item active"><a type="button" href="http://192.168.56.101:7870/" class="btn btn-link" href="index.html" style="color:white;padding:20px;" id="b"> Home</a></li>
+						<li class="nav-item"><a type="button" href="http://192.168.56.101:7870/products.html" class="btn btn-link" href="#" id="b" style="color:white; padding:20px;"> Product</a></li>
+						<li class="nav-item"><a type="button" href="http://192.168.56.101:7870/about.html" class="btn btn-link" href="#" id="d" style="color:white; padding:20px; background-color:orange;">  About us</a></li>
+						<li class="nav-item"><a type="button" href="http://192.168.56.101:7870/login.html" class="btn btn-link" href="#" id="e" style="color:white; padding:20px;">Login </a></li>
+						<li class="nav-item"><a type="button" href="http://192.168.56.101:7870/register.html" class="btn btn-link" href="#" id="e" style="color:white; padding:20px;">Signup </a></li>
+						<li class="nav-item"><a type="button" href="http://192.168.56.101:7870/contact.html" class="btn btn-link" href="#" id="e" style="color:white; padding:20px;"> Contact us</a></li> 
+					</ul>
+					<button type="button" class="navbar=toggle btn btn-success" data-toggle="collapse" data-target="#dropdownmobile" style="display:none;"  id="togglebutton"><i class="fa fa-bars"></i></button>
+
+				</nav>
+			</div>
+		</div>
+		<br>
+		</div>
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-lg-12">
+					<div class="jumbotron" style="background-color:white; position:relative; top:650px;">
+						<center>
+								<h1> ABOUT US </h1>
+								<hr style="width:100px; background-color:blue;">
+								<p style="font-size:25px;">Our vision is to create technology that makes life better for everyone, everywhere — every person, every organization, and every community around the globe. This motivates us — inspires us — to do what we do. To make what we make. To invent, and to reinvent. To engineer experiences that amaze. We won’t stop pushing ahead, because you won’t stop pushing ahead. You’re reinventing how you work. How you play. How you live. With our technology, you’ll reinvent your world.</p> 			
+
+							<div class="embded-responsive embed-response-16by9">
+								<iframe class="embed-responsive-item" id="videohandler" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0"></iframe>
+							</div>
+							<br></br>
+							<h1> Our Team</h1>
+							<hr style="width:25px; background-color:blue;">
+						</center>
+						<br>
+						
+				
+					<div class="row" data-aos="fade-up" data-aos-duration="1200">
+						<div class="col-lg-4">
+							<div class="card">
+								<center>
+									<div class="card-header">
+										<img src="static/team/p4.jfif" style="border-radius:100%;">
+									</div>
+									<div class="card-body">
+										<p>Our vision is to create technology that makes life better for everyone, everywhere — every person, every organization, and every community around the globe. This motivates us — inspires us — to do what we do. To make what we make. To invent, and to reinvent.</p>
+									</div>
+								</center>
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div class="card">
+								<center>
+									<div class="card-header">
+										<img src="static/team/p5.jfif" style="border-radius:100% ;height:225px; width:300px;">
+									</div>
+									<div class="card-body">
+										<p>Our vision is to create technology that makes life better for everyone, everywhere — every person, every organization, and every community around the globe. This motivates us — inspires us — to do what we do. To make what we make. To invent, and to reinvent.</p>
+									</div>
+								</center>
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div class="card">
+								<center>
+									<div class="card-header">
+										<img src="static/team/p6.jpg" style="height:225px; width:250px; border-radius:100%;">
+									</div>
+									<div class="card-body">
+										<p>Our vision is to create technology that makes life better for everyone, everywhere — every person, every organization, and every community around the globe. This motivates us — inspires us — to do what we do. To make what we make. To invent, and to reinvent.</p>
+									</div>
+								</center>
+							</div>
+						</div>
+					</div>
+					<div class="row" data-aos="fade-up" data-aos-duration="1200">
+							<div class="col-lg-4">
+								<div class="card">
+									<center>
+										<div class="card-header">
+											<img src="static/team/p1.jpg" style="border-radius:100%; height:225px; width:250px;">
+										</div>
+										<div class="card-body">
+											<p>Our vision is to create technology that makes life better for everyone, everywhere — every person, every organization, and every community around the globe. This motivates us — inspires us — to do what we do. To make what we make. To invent, and to reinvent.</p>
+										</div>
+									</center>
+								</div>
+							</div>
+							<div class="col-lg-4">
+								<div class="card">
+									<center>
+										<div class="card-header">
+											<img src="static/team/p2.jpg" style="border-radius:100%; height:225px; width:250px;">
+										</div>
+										<div class="card-body">
+											<p>Our vision is to create technology that makes life better for everyone, everywhere — every person, every organization, and every community around the globe. This motivates us — inspires us — to do what we do. To make what we make. To invent, and to reinvent.</p>
+										</div>
+									</center>
+								</div>
+							</div>
+							<div class="col-lg-4">
+								<div class="card">
+									<center>
+										<div class="card-header">
+											<img src="static/team/p3.jfif" style="border-radius:100%;">
+										</div>
+										<div class="card-body">
+											<p>Our vision is to create technology that makes life better for everyone, everywhere — every person, every organization, and every community around the globe. This motivates us — inspires us — to do what we do. To make what we make. To invent, and to reinvent.</p>
+										</div>
+									</center>
+								</div>
+							</div>
+						</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+	<div class="jumbotron" style="width:100%; position:relative; top:300px; background-color:#1f618d">
+		<div class="row">
+			<div class="col-lg-3">
+				<center style="text-align:justify;">
+					<h1 style="color:white;"> Userful Links</h1>
+					<br>
+					<a type="button"  href="#" class="btn btn-link" style="color:white;">Home</a>
+					<br>
+					<a type="button"  href="#" class="btn btn-link" style="color:white;">About us</a>
+					<br>
+					<a type="button"  href="#" class="btn btn-link" style="color:white;">Services</a>
+					<br>
+					<a type="button"  href="#" class="btn btn-link" style="color:white;">Terms of Services</a>
+					<br>
+					<a type="button"  href="#" class="btn btn-link" style="color:white;">Privacy Policy</a>
+				</center>
+			</div>
+			<div class="col-lg-3">
+				<center style="text-align:justify;">
+					<h1 style="color:white;"> Our Services</h1>
+					<br>
+					<a type="button"  href="#" class="btn btn-link" style="color:white;">Security</a>
+					<br>
+					<a type="button"  href="#" class="btn btn-link" style="color:white;">Development</a>
+					<br>
+					<a type="button"  href="#" class="btn btn-link" style="color:white;">Cloud hosting</a>
+					<br>
+					<a type="button"  href="#" class="btn btn-link" style="color:white;">Customer Support</a>
+				</center>
+			</div>
+			<div class="col-lg-3">
+				<center style="text-align:justify;">
+					<h1 style="color:white;"> Userful Links</h1>
+					<br>
+					<a type="button"  href="#" class="btn btn-link" style="color:white;">Home</a>
+					<br>
+					<a type="button"  href="#" class="btn btn-link" style="color:white;">About us</a>
+					<br>
+					<a type="button"  href="#" class="btn btn-link" style="color:white;">Services</a>
+					<br>
+					<a type="button"  href="#" class="btn btn-link" style="color:white;">Terms of Services</a>
+					<br>
+					<a type="button"  href="#" class="btn btn-link" style="color:white;">Privacy Policy</a>
+				</center>
+			</div>
+			<div class="col-lg-3">
+				<center style="text-align:justify;">
+					<h1 style="color:white;"> Contact Us</h1>
+						<br></br>
+						<i class="fa fa-envelope" style="color:white;font-size:25px;"></i>
+						<a type="button" href="#" class="btn btn-link" style="color:white;">Support@example.com</a>
+						<br></br>
+						<i style="color:white; position:relative; font-size:25px;" class="fa fa-phone"></i>
+						<p style="color:white; display:inline;">+066634712412</p>
+						<br></br>
+						<i  class="fa fa-address-card" style="font-size:25px; color:white; position:relative;"></i>
+						&nbsp;&nbsp;&nbsp;<p style="color:white; display:inline;">M512 Washington Plot No. 96</p>
+				</center>
+			</div>
+		</div>
+		<div clsas="row">
+			<div class="col-lg-12">
+				<footer>
+					<hr style="width:100%;">
+					<br>
+					<center>
+						<p style="color:white"> All Copyright Reserved(2019-2020)</p>
+					</center>
+				</footer>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+
+

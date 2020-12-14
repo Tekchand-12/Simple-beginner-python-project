@@ -1,0 +1,705 @@
+<html>
+<head>
+  <title> Products > 4 </title>
+  <link  rel="icon"href="/static/logo.png" type="image/png">
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+ <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+</script>
+
+<script>
+  
+  $(document).ready(function()
+  {
+    function listener()
+    {
+      if(window.innerWidth<=150)
+      {
+      $("#headerbar").hide();
+      $("#togglebutton").show();
+
+      var newdrop=document.getElementById("dropdownmobile");
+      newdrop.setAttribute("class","collapse navbar-collapse");
+
+      var dropinside=document.createElement("ul");
+      dropinside.setAttribute("class","nav navbar-nav");
+      var dropitems1=document.createElement("li");
+      var firstdrop1=document.createElement("a");
+      firstdrop1.setAttribute("href","index.html");
+      var firsttextnode1=document.createTextNode("Home");
+      firstdrop1.appendChild(firsttextnode1);
+      dropitems1.appendChild(firstdrop1);
+      dropinside.appendChild(dropitems1);
+
+      var dropitems2=document.createElement("li");
+      var firstdrop2=document.createElement("a");
+      firstdrop2.setAttribute("href","prodcuts.html");
+      var firsttextnode2=document.createTextNode("Product");
+      firstdrop2.appendChild(firsttextnode2);
+      dropitems2.appendChild(firstdrop2);
+      dropinside.appendChild(dropitems2);
+
+      var dropitems3=document.createElement("li");
+      var firstdrop3=document.createElement("a");
+      firstdrop3.setAttribute("href","about.html");
+      var firsttextnode3=document.createTextNode("Aboutus");
+      firstdrop3.appendChild(firsttextnode3);
+      dropitems3.appendChild(firstdrop3);
+      dropinside.appendChild(dropitems3);
+
+
+      var dropitems4=document.createElement("li");
+      var firstdrop4=document.createElement("a");
+      firstdrop4.setAttribute("href","login.html");
+      var firsttextnode4=document.createTextNode("Login");
+      firstdrop4.appendChild(firsttextnode4);
+      dropitems4.appendChild(firstdrop4);
+      dropinside.appendChild(dropitems4);
+
+      var dropitems5=document.createElement("li");
+      var firstdrop5=document.createElement("a");
+      firstdrop5.setAttribute("href","register.html");
+      var firsttextnode5=document.createTextNode("Signup");
+      firstdrop5.appendChild(firsttextnode5);
+      dropitems5.appendChild(firstdrop5);
+      dropinside.appendChild(dropitems5);
+
+
+      var dropitems6=document.createElement("li");
+      var firstdrop6=document.createElement("a");
+      firstdrop6.setAttribute("href","contact.html");
+      
+      var firsttextnode6=document.createTextNode("Contact us");
+      firstdrop6.appendChild(firsttextnode6);
+      dropitems6.appendChild(firstdrop6);
+      dropinside.appendChild(dropitems6);
+      
+      newdrop.appendChild(dropinside);
+
+
+      }
+      else
+      {
+
+      }
+    }
+  
+    window.addEventListener("resize",listener);
+    $(function()
+    {
+      AOS.init();
+    });
+    $("#mysearch").on("keyup",function()
+    {
+      var myarr=['laptop','Laptop','Laptops','laptops','Printer','printer','Printers','printers','Mobile Phone']
+      var datasend=$("#mysearch").val();
+      var tester=datasend.toString();
+      var t1=5;
+
+      if(tester!='')
+      {
+
+        $.ajax({
+          url:"http://192.168.56.102:7870/product.json?q="+datasend,
+          method:"get",
+          cache:false,
+          success:function(response,statusText)
+          {
+            
+            myobj=JSON.parse(response);
+            
+            if(datasend == "samsung"||datasend=="Samsung")
+            {
+
+              t1=Object.keys(myobj.products.MobilePhone.Samsung);
+            
+            }
+            
+            else if(datasend == "apple"||datasend=="Apple")
+            {
+              t1=Object.keys(myobj.products.MobilePhone.apple);
+            }
+            else if(datasend == "vivo"||datasend=="Vivo")
+            {
+              t1=Object.keys(myobj.products.MobilePhone.vivo);
+            }
+            else
+            {
+              
+            
+                if(datasend in myobj.products.laptop)
+                {
+                  alert(datasend);
+                }
+                else if(datasend in myobj.products.MobilePhone.Samsung)
+                {
+                  alert(datasend);
+                }
+                else if(datasend in myobj.products.MobilePhone.apple)
+                {
+                  alert(datasend);
+                }
+                else if(datasend in myobj.products.MobilePhone.vivo)
+                {
+                  alert(datasend);
+                }
+                else if(datasend in  myobj.products.Printers)
+                {
+                  alert(datasend);
+                }
+                else if(datasend in myobj.products.laptop)
+                {
+                  alert(datasend);
+                }
+                else
+                {
+                }
+              
+            }         
+            var responselist,n;
+            var  listchecker=document.getElementById("responseul").style.float="center";
+            for(n=0;n<=t1.length-1;n++)
+            {
+              
+                          
+              var listappend=document.createElement("li");
+              listappend.setAttribute("style","list-style:none;");
+              listappend.setAttribute("class","nav-item");
+
+              var firstitem=document.createElement("a");
+              firstitem.setAttribute("class","nav-link");
+              firstitem.setAttribute("href","#")
+              var firsttext=document.createTextNode(t1[n]);
+              firstitem.appendChild(firsttext);
+              listappend.appendChild(firstitem);
+              $("#responseul").append(listappend);
+
+            }
+              
+
+            $("#responseul").css('display','block');
+
+          
+
+          },
+          error:function(error)
+          {
+            alert(error);
+          }
+
+        });
+      }
+      else
+      {
+        $(document).ajaxStop(function()
+        {
+          $("#responseul").hide();
+        });
+      }
+      });
+
+
+
+    $("#mysearch").on("click",function()
+    {
+
+      $("#mylist").css('display','inline-block');
+      $("#responseul").hide();
+        
+    });
+    $("#mysearch").on('keyup',function()
+    {
+      $("#responseul").css("display","none")
+      if($("#mysearch").val()!='')
+      {
+
+        $("#mylist").hide();
+        $("#responseul").css("display","block");
+      }
+      else
+      {
+
+        var moli=document.getElementById("responseul");
+        while(moli.firstChild)
+        {
+          moli.removeChild(moli.firstChild);
+        }
+        $("#responseul").css("display","block");
+
+        $("#mylist").show();
+      }
+      
+    });
+
+
+    $("#mylist").mouseleave(function()
+    {
+      $("#mylist").hide();
+    });
+    if(!$("mysearch").text=='')
+    {
+      $("#mylist").hide();
+    }
+  
+    $("#myul").on("click","button",function()
+    {
+      var userrequest=$("button").val();
+      alert(userequest);
+      if($("#mysearch").val(userrequest))
+      {
+        $("#myul").hide();
+        
+      }
+      else if($("#mysearch").click())
+      {
+        $("#myul").show();
+      }
+      else if($("#mysearch").val()!='')
+      {
+        $("#myul").show();
+      }
+      else
+      {
+        $("#myul").show();
+      }
+    });
+
+    $("#responseul").on('click',function()
+    {
+
+      $("#mysearch").html($("#responseul").children());
+      $("#responseul").hide();
+    });
+  
+    
+
+
+    $(document).on('scroll',function()
+    {
+      if($(document).scrollTop() > 200)
+      {
+        $("#navigation").css("background-color","blue");
+        $(".nav nav-pills").css("color","blue");
+      }
+      else
+      {
+        $("#navigation").css("background-color","transparent");
+        $(".nav nav-pills").css("color","white"); 
+
+      }
+    });
+
+  });
+</script>
+
+<style>
+  
+  
+  #mylist
+  {
+    list-style:none; 
+    display:none; 
+    position:relative; 
+    width:550px;
+    text-align:justify;
+    background-color:#E7DCDA; 
+
+
+  }
+  
+  #firstlist
+  {
+    position:relative;
+    float:right;
+    display:inline-block;
+
+
+  }
+  #secondlist
+  {
+    position:relative;
+    float:right;
+    display:inline-block;
+  }
+  #thirdlist
+  {
+
+    position:relative;
+    float:right;
+    display:inline-block;
+] }
+  #fourthlist
+  {
+
+    position:relative;
+    float:right;
+    display:inline-block;
+  }
+  #fifthlist
+  {
+
+    position:relative;
+    display:inline-block;
+    float:right;
+  }
+  #os
+  {
+    color:green;
+    display:inline-block;
+    float:left;
+    font-size:25px;
+    position:relative;
+  }
+  #disableitem
+  {
+    color:red;
+    display:inline-block;
+    float:left;
+    font-size:25px;
+    position:relative;
+  }
+  #third
+  {
+    position:relative;
+    float:right;
+  }
+  
+</style>
+
+
+<body style="background-image:url('/static/index.jpeg'); overflow-x:hidden;" onselectstart="return false;">
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-12">
+      <nav class="navbar navbar-light fixed-top" style="opacity:-2px" id="navigation">
+          <div class="navbar-brand" style="font-style:italic;">
+            <a href="#" id="0" style="color:orange;">Exploit author</a>
+          </div>
+
+          <div id="dropdownmobile"></div>
+          <ul class="nav nav-pills" id="headerbar">
+            <li class="nav-item"><a type="button" class="btn btn-link" href="http://192.168.56.101:7870/user/{{userid}}/home.html" id="b" style="color:white; padding:20px;"> Home</a></li>
+            <li class="nav-item active"><a type="button" href="http://192.168.56.101:7870/user/{{userid}}/products.html" class="btn btn-link" href="#" id="b" style="color:white; background-color:orange; padding:20px;"> Product</a></li>
+            <li class="nav-item"><a type="button" href="http://192.168.56.101:7870/user/{{userid}}/about.html" class="btn btn-link" href="#" id="d" style="color:white; padding:20px;">  About us</a></li>
+            <li class="nav-item"><a type="button" href="http://192.168.56.101:7870/user/{{userid}}/contact.html" class="btn btn-link" href="#" id="e" style="color:white; padding:20px;"> Contact us</a></li>
+            <li class="nav-item"><a type="button" href="#" class="btn btn-link" id="m" style="color:white;padding:20px;"><i class="fa fa-shopping-cart" style="font-size:25px;"></i></a></li>
+            <li class="nav-item dropdown">
+              <a type="button"  class="btn btn-link dropdown-toggle" data-toggle="dropdown" id="f" data-target="#testmenu" style="color:white; padding:20px;">
+                <i style="font-size:30px;" class="fa fa-user-circle"></i>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right" id="testmenu">
+                <a type="button" href="/user/settings.html#first" class="btn btn-link dropdown-item"> Your Profile</a>
+                <a type="button" href="/user/settings.html#second" class="btn btn-link dropdown-item"> Notification </a>
+                <a type="button" href="/user/message.html#third" class="btn btn-link dropdown-item"> Message </a>
+                <a type="button" href="logout.html" class="btn btn-link dropdown-item"> Logout </a>
+              </div>
+            </li>
+          </ul>
+          <button type="button" class="navbar=toggle btn btn-success" data-toggle="collapse" data-target="#dropdownmobile" style="display:none;"  id="togglebutton"><i class="fa fa-bars"></i></button>
+
+        </nav>
+      </div>
+    </div>
+    <br>
+    
+  <div class="row">
+    <div class="col-lg-12">
+      <center>
+        <h1 style="color:white; padding-top:200px;" data-aos="fade-down" data-aos-duration="1500"> Welcome to the University</h1>
+        <p style="color:white;" data-aos="fade-up" data-aos-duration="1500"> Start new Journey with out partners and invite more than hundrends peoples and get invitaion code</p>
+      </center>     
+    </div>
+  </div>
+  <br></br>
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="form-inline justify-content-center" style="top:50px; position:relative;">
+        <div class="form-group">
+          <input type="text"  id="mysearch" style="width:500px;" placeholder="Search Products" maxlength="500" class="form-control">
+        </div>
+        <div class="form-group">
+          <button type="button" id="mysearchclick" value="" class="form-control btn btn-primary btn-md" style="width:50px;"><i class="fa fa-search"></i></button>
+        </div>
+      </div>
+      <br></br>
+      <ul id="responseul" class="nav nav-pills flex-column" style="color:skyblue; text-align:justify; list-style-type:none; display:none;left:342px; background-color:white;position:relative;width:550px;">
+        
+      </ul>
+
+      <center>
+
+      <ul id="mylist" class="nav nav-pills flex-column">
+        
+        <li class="nav-item"><img src="/static/listlogo/laptop.png" style="position:relative;float:left; height:40px;width:40px;"><a type="button" class="nav-link" class="firstlist"> Laptop </a></li>
+        <li class="nav-item"><img src="/static/listlogo/phone.jpeg" style="position:relative;float:left; height:40px;width:40px;"><a type="button" class="nav-link" class="firstlist"> Mobile </a></li>
+        <li class="nav-item"><img src="/static/listlogo/printer.jpeg" style="position:relative;float:left; height:40px;width:40px;"><a type="button" class="nav-link" class="firstlist"> Printer </a></li>
+        <li class="nav-item"><img src="/static/listlogo/keyboard.png" style="position:relative;float:left; height:40px;width:40px;"><a type="button" class="nav-link" class="firstlist"> Keyboard </a></li>
+        <li class="nav-item"><img src="/static/listlogo/computer.jfif" style="position:relative;float:left; height:40px;width:40px;"><a type="button" class="nav-link" class="firstlist"> Computer </a></li>  
+
+      </ul>
+      
+      </center>
+    </div>
+  </div>
+</div>
+<div class="jumbotron" style="margin-top:170px; height:110%;">
+  <div class="row">
+    <div class="col-lg-12">
+      <center>
+        <h1> Our Products</h1>
+        <hr style="width:5%; background-color:blue;">
+        <div id="demo" class="carousel slide" data-ride="carousel">
+          <ul class="carousel-indicators">
+              <li data-target="#demo" data-slide-to="0" class="active"></li>
+              <li data-target="#demo" data-slide-to="1"></li>
+              <li data-target="#demo" data-slide-to="2"></li>
+              <li data-target="#demo" data-slide-to="3"></li>
+            </ul>
+
+          <div class="carousel-inner" style="background-color:black; height:450px;">
+              <div class="carousel-item active">
+                  <img src="/static/products/p1.jpeg" style="height:450px; width:1200px;">
+              </div>
+              <div class="carousel-item">
+                  <img src="/static/products/p2.jpeg" style="height:450px; width:1200px;">
+              </div>
+              <div class="carousel-item">
+                  <img src="/static/products/p3.jpg" style="height:450px; width:1200px;">
+              </div>
+              <div class="carousel-item">
+                <img src="/static/products/p5.png" style="height:450px; width:1200px;">
+              </div>
+            </div>
+
+           <a class="carousel-control-prev" href="#demo" data-slide="prev">
+            <i class="fa fa-chevron-left" style="font-size:75px;"></i>
+           </a>
+            <a class="carousel-control-next" href="#demo" data-slide="next">
+               <i class="fa fa-chevron-right" style="font-size:75px;"></i>
+            </a>
+        </div>
+      </center>
+    </div>
+  </div>
+</div>
+<div class="jumbotron" style="background-color:white">
+  <center>
+    <h1>Mobile Gadegets</h1>
+    <hr style="background-color:blue;width:40px;">
+  </center>
+<div class="row" data-aos="zoom-in" data-aos-duration="1500">
+  <div class="col-lg-4">
+    <center>
+      <img src="/static/products/i1.jpg" alt="laptop1" style="height:350px; width:350px;">
+      <h1> Iphone1</h1>
+      <button type="button" class="btn btn-primary"> Add To Cart</button>
+      <br></br>
+    </center>
+  </div>
+  <div class="col-lg-4">
+    <center>
+      <img src="/static/products/i2.png" alt="laptop1" style="height:350px; width:350px;">
+          <h1> Iphone10 Red Crystal </h1>
+
+      <button type="button" class="btn btn-primary"> Add To Cart</button>
+      <br></br>
+    </center>
+  </div>
+  <div class="col-lg-4">
+    <center>
+      <img src="/static/products/i3.webp" alt="laptop1" style="height:350px; width:350px;border-radius:20px;">
+            <h1>Iphone11 Latest 64gb Multi Splitted Adjustable</h1>
+
+      <button type="button" class="btn btn-primary"> Add To Cart</button>
+      <br></br>
+    </center>
+  </div>
+</div>
+<hr style="width:100%;">
+
+<div class="row" data-aos="zoom-in" data-aos-duration="1500">
+  <div class="col-lg-4">
+    <center>
+      <img src="/static/products/i4.jfif" alt="laptop1" style="height:350px; width:350px; border-radius:20px;">
+      <h1>Iphone9 128gb 6gb black edition </h1>
+      <button type="button" class="btn btn-primary"> Add To Cart</button>
+      <br></br>
+    </center>
+  </div>
+  <div class="col-lg-4">
+    <center>
+      <img src="/static/products/i5.jfif" alt="laptop1" style="height:350px; width:350px;">
+      <h1>Iphone8 Sweat Minni</h1>
+      <button type="button" class="btn btn-primary"> Add To Cart</button>
+      <br></br>
+    </center>
+  </div>
+  <div class="col-lg-4">
+    <center>
+      <img src="/static/products/i6.png" alt="laptop1" style="height:350px; width:350px;">
+      <h1>Iphone2 Multiedition</h1>
+      <button type="button" class="btn btn-primary"> Add To Cart</button>
+      <br></br>
+    </center>
+  </div>
+</div>
+<hr style="width:100%;">
+
+<div class="row" data-aos="zoom-in" data-aos-duration="1500">
+  <div class="col-lg-4">
+    <center>
+      <img src="/static/products/i7.jpg" alt="laptop1" style="height:350px; width:350px;border-radius:20px;">
+      <h1> Iphone9 Multicolors Snapdragon ARMv7</h1>
+      <button type="button" class="btn btn-primary"> Add To Cart</button>
+      <br></br>
+    </center>
+  </div>
+  <div class="col-lg-4">
+    <center>
+      <img src="/static/products/i8.jfif" alt="laptop1" style="height:350px; width:350px;">
+      <h1> Iphone5(2015-64gb rom,4gb ram)</h1>
+      <button type="button" class="btn btn-primary"> Add To Cart</button>
+      <br></br>
+    </center>
+  </div>
+  <div class="col-lg-4">
+    <center>
+      <img src="/static/products/i9.jpg" alt="laptop1" style="height:350px; width:350px;border-radius:20px;">
+      <h1> Iphone3 Silver Edition(5gb/3gb)</h1>
+      <button type="button" class="btn btn-primary"> Add To Cart</button>
+      <br></br>
+    </center>
+  </div>
+</div>
+<hr style="width:100%;">
+
+<div class="row" data-aos="zoom-in" data-aos-duration="1500">
+  <div class="col-lg-4">
+    <center>
+      <img src="/static/products/i10.png" alt="laptop1" style="height:350px; width:350px; border-radius:20px;">
+      <h1> Iphone7 Black Groilla coverd 64gb/6gb</h1>
+      <button type="button" class="btn btn-primary"> Add To Cart</button>
+      <br></br>
+    </center>
+  </div>
+  <div class="col-lg-4">
+    <center>
+      <img src="/static/products/i11.jpg" alt="laptop1" style="height:350px; width:350px;">
+      <h1> Iphone12 2020(256gb/8gb 40mp rear</h1> 
+     <button type="button" class="btn btn-primary"> Add To Cart</button>
+      <br></br>
+    </center>
+  </div>
+  <div class="col-lg-4">
+    <center>
+      <img src="/static/products/i12.jfif" alt="laptop1" style="height:350px; width:350px;">
+      <h1> Iphone3 2012(8gb/1gb) Refurnished</h1>
+      <button type="button" class="btn btn-primary"> Add To Cart</button>
+      <br></br>
+    </center>
+  </div>
+</div>
+<br></hr>
+<br></br>
+<div class="row">
+  <div class="col-lg-12">
+  <center>
+    <ol class="nav nav-pills" style="left:500px; position:relative;">
+      <li class="nav-item"><a href="#" class="nav-link">1</a></li>
+      <li class="nav-item"><a href="products2.html" class="nav-link">2</a></li>
+      <li class="nav-item"><a href="products3.html" class="nav-link">3</a></li>
+      <li class="nav-item"><a href="products4.html" class="nav-link active">4</a></li>
+    </ol>
+  </center>
+</div>
+</div>
+</div>
+  <div class="jumbotron" style="height:85%; width:100%; position:relative; top:15px; background-color:#1f618d">
+    <div class="row">
+      <div class="col-lg-3">
+        <center style="text-align:justify;">
+          <h1 style="color:white;"> Userful Links</h1>
+          <br>
+          <a type="button"  href="#" class="btn btn-link" style="color:white;">Home</a>
+          <br>
+          <a type="button"  href="#" class="btn btn-link" style="color:white;">About us</a>
+          <br>
+          <a type="button"  href="#" class="btn btn-link" style="color:white;">Services</a>
+          <br>
+          <a type="button"  href="#" class="btn btn-link" style="color:white;">Terms of Services</a>
+          <br>
+          <a type="button"  href="#" class="btn btn-link" style="color:white;">Privacy Policy</a>
+        </center>
+      </div>
+      <div class="col-lg-3">
+        <center style="text-align:justify;">
+          <h1 style="color:white;"> Our Services</h1>
+          <br>
+          <a type="button"  href="#" class="btn btn-link" style="color:white;">Security</a>
+          <br>
+          <a type="button"  href="#" class="btn btn-link" style="color:white;">Development</a>
+          <br>
+          <a type="button"  href="#" class="btn btn-link" style="color:white;">Cloud hosting</a>
+          <br>
+          <a type="button"  href="#" class="btn btn-link" style="color:white;">Customer Support</a>
+        </center>
+      </div>
+      <div class="col-lg-3">
+        <center style="text-align:justify;">
+          <h1 style="color:white;"> Userful Links</h1>
+          <br>
+          <a type="button"  href="#" class="btn btn-link" style="color:white;">Home</a>
+          <br>
+          <a type="button"  href="#" class="btn btn-link" style="color:white;">About us</a>
+          <br>
+          <a type="button"  href="#" class="btn btn-link" style="color:white;">Services</a>
+          <br>
+          <a type="button"  href="#" class="btn btn-link" style="color:white;">Terms of Services</a>
+          <br>
+          <a type="button"  href="#" class="btn btn-link" style="color:white;">Privacy Policy</a>
+        </center>
+      </div>
+      <div class="col-lg-3">
+        <center style="text-align:justify;">
+          <h1 style="color:white;"> Contact Us</h1>
+            <br></br>
+            <i class="fa fa-envelope" style="color:white;font-size:25px;"></i>
+            <a type="button" href="#" class="btn btn-link" style="color:white;">Support@example.com</a>
+            <br></br>
+            <i style="color:white; position:relative; font-size:25px;" class="fa fa-phone"></i>
+            <p style="color:white; display:inline;">+066634712412</p>
+            <br></br>
+            <i  class="fa fa-address-card" style="font-size:25px; color:white; position:relative;"></i>
+            &nbsp;&nbsp;&nbsp;<p style="color:white; display:inline;">M512 Washington Plot No. 96</p>
+        </center>
+      </div>
+    </div>
+    <div clsas="row">
+      <div class="col-lg-12">
+        <footer>
+          <hr style="width:100%;">
+          <br>
+          <center>
+            <p style="color:white"> All Copyright Reserved(2019-2020)</p>
+          </center>
+        </footer>
+      </div>
+    </div>
+  </div>
+    </body>
+    </html>

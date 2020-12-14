@@ -1,0 +1,370 @@
+<html>
+<head>
+	<title> Techsupport </title>
+	<link  rel="icon"href="/static/logo.png" type="image/png">
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+ <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+</script>
+
+<script>
+	function handle()
+	{
+				
+				var newdrop=document.getElementById("dropmobile");
+
+				var dropinside=document.createElement("ul");
+				dropinside.setAttribute("class","collapse");
+				dropinside.setAttribute("id","dropdownmobile");
+
+				var dropitems1=document.createElement("li");
+				var firstdrop1=document.createElement("a");
+				firstdrop1.setAttribute("href","#");
+				var firsttextnode1=document.createTextNode("Home");
+				firstdrop1.appendChild(firsttextnode1);
+				dropitems1.appendChild(firstdrop1);
+				dropinside.appendChild(dropitems1);
+
+				var dropitems2=document.createElement("li");
+				var firstdrop2=document.createElement("a");
+				firstdrop2.setAttribute("href","http://192.168.56.101:7870/product.html");
+				var firsttextnode2=document.createTextNode("Product");
+				firstdrop2.appendChild(firsttextnode2);
+				dropitems2.appendChild(firstdrop2);
+				dropinside.appendChild(dropitems2);
+
+				var dropitems3=document.createElement("li");
+				var firstdrop3=document.createElement("a");
+				firstdrop3.setAttribute("href","about.html");
+				var firsttextnode3=document.createTextNode("Aboutus");
+				firstdrop3.appendChild(firsttextnode3);
+				dropitems3.appendChild(firstdrop3);
+				dropinside.appendChild(dropitems3);
+
+
+				var dropitems4=document.createElement("li");
+				var firstdrop4=document.createElement("a");
+				firstdrop4.setAttribute("href","login.html");
+				var firsttextnode4=document.createTextNode("Login");
+				firstdrop4.appendChild(firsttextnode4);
+				dropitems4.appendChild(firstdrop4);
+				dropinside.appendChild(dropitems4);
+
+				var dropitems5=document.createElement("li");
+				var firstdrop5=document.createElement("a");
+				firstdrop5.setAttribute("href","register.html");
+				var firsttextnode5=document.createTextNode("Signup");
+				firstdrop5.appendChild(firsttextnode5);
+				dropitems5.appendChild(firstdrop5);
+				dropinside.appendChild(dropitems5);
+
+
+				var dropitems6=document.createElement("li");
+				var firstdrop6=document.createElement("a");
+				firstdrop6.setAttribute("href","contact.html");
+				
+				var firsttextnode6=document.createTextNode("Contact us");
+				firstdrop6.appendChild(firsttextnode6);
+				dropitems6.appendChild(firstdrop6);
+				dropinside.appendChild(dropitems6);
+				
+				newdrop.appendChild(dropinside);
+				
+	}
+	$(window).on('load resize change unload',function()
+	{
+			var counter= new XMLHttpRequest();
+			counter.onreadystatechange=function()
+			{
+				if(this.readyState == 4 && this.status==200)
+				{
+					
+					myjsonhandler=JSON.parse(this.responseText).Products.length;
+					if(myjsonhandler != 0)
+					{
+
+
+					var updatecounter=document.getElementById("m");
+					var number=document.getElementById("testicon");
+					number.setAttribute("class","badges");
+					number.style.position="relative";
+					number.style.borderRaidus="50%";
+					number.style.left="-5px";
+					number.style.top="10px";
+					number.style.backgroundColor="red";
+					number.innerHTML=myjsonhandler;
+					updatecounter.appendChild(number);
+
+					}
+					else
+					{
+						document.getElementById("errorhandler").style.backgrounImage="url('http://192.168.56.101:7870/static/empty/png";
+					}
+			
+				}
+			}
+			counter.open("GET","http://192.168.56.101:7870/user/{{userid}}/cart.json",true);
+			counter.send();
+
+		if(navigator.userAgent.toString().match('Android'))
+			{
+				$('body').css("overflow-x","hidden");
+				$("#headerbar").hide();
+				$("#togglebutton").show();
+				handle();
+			
+			}
+			else
+			{
+				if(window.innerWidth <= 700)
+				{	
+					$("#headerbar").hide();
+					$("#togglebutton").show();
+					handle()
+				}
+				else if(window.innerWidth <= 1000 && window.innerWidth >=701)
+				{
+					$("#headerbar").show();
+					$("#togglebutton").hide();
+					handle()
+		
+				}
+				else
+				{
+					document.getElementById("mylist").style.removeProperty("top");
+
+					$("#headerbar").show();
+					$("#togglebutton").hide();
+					
+
+				}
+		}
+
+	});
+</script>
+<body style="background-image:url('static/index.jpeg'); overflow-x:hidden;" onselectstart="return false;">
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-lg-12">
+			<nav class="navbar navbar-light fixed-top" style="opacity:-2px; background-color:blue;" id="navigation">
+					<div class="navbar-brand" style="font-style:italic;">
+						<a href="#" clas="btn" id="0" style="border-radius:300px;font-style:italic; color:orange;border-radius:10px;"><b>OnlineShopping</b></a>
+					</div>
+
+					<div id="dropmobile"></div>
+						<ul class="nav nav-pills" id="headerbar">
+						<li class="nav-item"><a type="button" class="btn btn-link" href="http://192.168.56.101:7870/user/{{userid}}/home.html" id="b" style="color:white; padding:20px;"> Home</a></li>
+						<li class="nav-item"><a type="button" href="http://192.168.56.101:7870/user/{{userid}}/products.html" class="btn btn-link" href="#" id="b" style="color:white; padding:20px;"> Product</a></li>
+						<li class="nav-item"><a type="button" href="http://192.168.56.101:7870/user/{{userid}}/about.html" class="btn btn-link" href="#" id="d" style="color:white; padding:20px;">  About us</a></li>
+						<li class="nav-item"><a type="button" href="http://192.168.56.101:7870/user/{{userid}}/contact.html" class="btn btn-link" href="#" id="e" style="color:white; padding:20px;"> Contact us</a></li>
+			            <li class="nav-item"><a type="button" href="http://192.168.56.101:7870/user/{{userid}}/Shoppingcart.html" class="btn btn-link" id="m" style="color:white;padding:20px;"><i class="fa fa-shopping-cart" style="font-size:25px;"></i></a></li>
+
+						<li class="nav-item dropdown">
+							<a type="button"  class="btn btn-link dropdown-toggle" data-toggle="dropdown" id="f" data-target="#testmenu" style="color:white; padding:20px;">
+								<i style="font-size:30px;" class="fa fa-user-circle"></i>
+							</a>
+							<div class="dropdown-menu dropdown-menu-right" id="testmenu">
+								<a type="button" href="/user/{{userid}}/settings.html#first" class="btn btn-link dropdown-item"> Your Profile</a>
+								<a type="button" href="/user/{{userid}}/settings.html#second" class="btn btn-link dropdown-item"> Notification </a>
+								<a type="button" href="/user/{{userid}}/message.html#third" class="btn btn-link dropdown-item"> Message </a>
+								<a type="button" href="/user/{{userid}}/logout.html" class="btn btn-link dropdown-item"> Logout </a>
+							</div>
+						</li>
+					</ul>
+					<button type="button" class="btn btn-success" aria-hidden="true" data-toggle="collapse" data-target="#dropdownmobile" style="display:none;"  id="togglebutton"><i class="fa fa-bars"></i></button>
+
+				</nav>
+			</div>
+		</div>
+		<br>
+		<br><br><br><br></br>
+		<div class="row">
+			<div class="col-lg-12">
+				<center><h1> Technical Support</h1></center>
+				<div class="alert alert-primary nav flex-column nav-pills active" style="font-size:25px;">
+					<div class="dropright">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">1. Email Verification Problem</a>
+					
+						<div class="dropdown-menu">
+							1. Our Email System doesn't Support Third party or Temporary Mails.
+							<br>
+							2. Acceptance Only Valid Trusted Emails like(example@gmail.com,example,yahoo.com)
+							<br>
+							3. After Provide These domains then Verification Email is Sent to Registered Email Address
+							<br>
+							4. Or You Can You OTP behalf of Mobile Number
+						</div>
+					</div>
+					<div class="dropright">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">2. Mobile Verification Problem</a>
+					
+						<div class="dropdown-menu">
+								1. Single Mobile Number Associated With only One Account
+								<br>
+								2. Does't Support Two different Numbers to Single Account
+								<br>
+								3. Enter the Mobile To verify Which is not Registed in past to our domain accounts
+								<br>
+								4. Then You will receive OTP
+								<br>
+								5. Two Different Mobile Can Be Suspecious Malacious Attacks
+								<br>
+								6. Our Department Not Responsible For any Misuse of Your Accounts.
+						</div>
+					</div>
+					<div class="dropright">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">3. Joint Account</a>
+					
+						<div class="dropdown-menu">
+							1. You Can Merge Two Account or Can Joint Account
+							<br>
+							2. One Mobile Number and One different Email ID
+							<br>
+							3. Before Verification Email Id Cannot manage their Account
+							<br>
+							4. When Verify Applied then OTP Send To Mobile Number of Owner Accounts.
+						</div>
+					</div>
+					<div class="dropright">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">4. Payment Mode</a>
+					
+						<div class="dropdown-menu">
+							1. Payment Can Be Accept Using Debit Card/Credit Card Or Netbanking
+							<br>
+							2. Phone Pay Also Support Or Google Pay
+							<br>
+							3.Product Will Be Delivered At Home With Our Suppliers
+							<br>
+							4.Charge Fees For Transport
+						</div>
+					</div>
+					<div class="dropright">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">5. Signin Issue</a>
+					
+						<div class="dropdown-menu">
+							1. If You Trouble With Signin then You should Check Your username and Password
+							<br>
+							2. If Any Issue Again then Refresh Again or Come to login After Few Time.
+							<br>
+							3. Some Signin Issue Can Be Appears Because Our Developemnt Team on Progress
+						</div>
+					</div>
+					<div class="dropright">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">6. Signup Issue</a>
+					
+						<div class="dropdown-menu">
+							1. Create Account On Newly Refresh Again
+							<br>
+							2. If Account Already exits Then Can face problems About it
+							<br>
+							3. Confirm You Identity Due to Trouble With Signup
+
+						</div>
+					</div>
+					<div class="dropright">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">7. Suspecious Activities</a>
+					
+						<div class="dropdown-menu">
+							1. Our System is 100% Secure
+							<br>
+							2. Main Goal of Our Team To be Safe Before Any Purchasing Products
+							<br>
+							3. <b>**Not Provide Any Detail To Spam Caller Because We Use Only Email System for Customer Query About Products</b>
+							<br>
+							4. Team Will Not Responsible For any Mistake By You like Credit Card Detail To Verify to Spammer
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<div class="jumbotron"style="width:100%; position:relative; background-color:#1f618d">
+		<div class="row">
+			<div class="col-lg-3">
+				<center style="text-align:justify;">
+					<h1 style="color:white;"> Userful Links</h1>
+					<br>
+					<a type="button"  href="#" class="btn btn-link" style="color:white;">Home</a>
+					<br>
+					<a type="button"  href="#" class="btn btn-link" style="color:white;">About us</a>
+					<br>
+					<a type="button"  href="#" class="btn btn-link" style="color:white;">Services</a>
+					<br>
+					<a type="button"  href="#" class="btn btn-link" style="color:white;">Terms of Services</a>
+					<br>
+					<a type="button"  href="#" class="btn btn-link" style="color:white;">Privacy Policy</a>
+				</center>
+			</div>
+			<div class="col-lg-3">
+				<center style="text-align:justify;">
+					<h1 style="color:white;"> Our Services</h1>
+					<br>
+					<a type="button"  href="#" class="btn btn-link" style="color:white;">Security</a>
+					<br>
+					<a type="button"  href="#" class="btn btn-link" style="color:white;">Development</a>
+					<br>
+					<a type="button"  href="#" class="btn btn-link" style="color:white;">Cloud hosting</a>
+					<br>
+					<a type="button"  href="#" class="btn btn-link" style="color:white;">Customer Support</a>
+				</center>
+			</div>
+			<div class="col-lg-3">
+				<center style="text-align:justify;">
+					<h1 style="color:white;"> Userful Links</h1>
+					<br>
+					<a type="button"  href="#" class="btn btn-link" style="color:white;">Home</a>
+					<br>
+					<a type="button"  href="#" class="btn btn-link" style="color:white;">About us</a>
+					<br>
+					<a type="button"  href="#" class="btn btn-link" style="color:white;">Services</a>
+					<br>
+					<a type="button"  href="#" class="btn btn-link" style="color:white;">Terms of Services</a>
+					<br>
+					<a type="button"  href="#" class="btn btn-link" style="color:white;">Privacy Policy</a>
+				</center>
+			</div>
+			<div class="col-lg-3">
+				<center style="text-align:justify;">
+					<h1 style="color:white;"> Contact Us</h1>
+						<br></br>
+						<i class="fa fa-envelope" style="color:white;font-size:25px;"></i>
+						<a type="button" href="#" class="btn btn-link" style="color:white;">Support@example.com</a>
+						<br></br>
+						<i style="color:white; position:relative; font-size:25px;" class="fa fa-phone"></i>
+						<p style="color:white; display:inline;">+066634712412</p>
+						<br></br>
+						<i  class="fa fa-address-card" style="font-size:25px; color:white; position:relative;"></i>
+						&nbsp;&nbsp;&nbsp;<p style="color:white; display:inline;">M512 Washington Plot No. 96</p>
+				</center>
+			</div>
+		</div>
+		<div clsas="row">
+			<div class="col-lg-12">
+				<footer>
+					<hr style="width:100%;">
+					<br>
+					<center>
+						<p style="color:white"> All Copyright Reserved(2019-2020)</p>
+					</center>
+				</footer>
+			</div>
+		</div>
+</body>
+</html>

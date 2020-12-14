@@ -1,0 +1,61 @@
+<html>
+<head>
+	<title> Welcome </title>
+	<link  rel="icon"href="http://192.168.56.101:7870/static/logo.png" type="image/png">
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+ <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+</script>
+
+<body>
+	<div class="container">
+		<div class="co-lg-12">
+			<center>
+				<h1> Payment Details</h1>
+				<br>
+				<div clas="form-inline" style="width:500px;">
+					<i class="fa fa-circle" style="color:red; font-size:40px; position:relative; left:-200px; top:25px;"></i>
+					<i class="fa fa-circle" style="color:red; font-size:40px; position:relative; left:10px; top:25px;"></i>
+					<i class="fa fa-circle" style="color:red; font-size:40px; position:relative; left:200px; top:25px;"></i>
+
+					<div class="progress">
+						<div class="progress-bar bg-danger" style="width:50%;">1</div>
+						<div class="progress-bar bg-default" style="width:50%;">2</div>
+					</div>
+
+					<br>
+					<div class="form-group">
+						<input type="text" placeholder="Cardholder's Name" class="form-control" id="a">
+					</div>
+					<div class="form-group">
+						<input type="text" placeholder="Card Number" class="form-control" id="a">
+					</div>
+					<div class="form-group form-inline" style="display:inline-block; float:left;">
+						<input type="text" placeholder="Valid" class="form-control" id="a">
+					</div>
+					<div class="form-group form-inline" style="display:inline-block;position:relative; float:right;">
+						<input type="text" placeholder="CVV/CVC*" class="form-control" id="a">
+					</div>
+					
+					<br>
+					<a type="button"  href="http://192.168.56.101:7870/user/{{userid}}/PaymentOTP.html" class="btn btn-danger btn-lg" style="width:500px; color:white;">Next Step</a>
+				</div>
+			</center>
+		</div>
+	</div>
+</body>
+</html>

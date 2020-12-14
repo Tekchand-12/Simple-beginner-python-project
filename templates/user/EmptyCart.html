@@ -1,0 +1,64 @@
+<html>
+<head>
+	<title> Welcome </title>
+	<link  rel="icon"href="http://192.168.56.101:7870/static/logo.png" type="image/png">
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+ <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+<body style="background-image:url('static/index.jpeg'); overflow-x:hidden;" onselectstart="return false;">
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-lg-12">
+				<center><div id="booter"></div></center>
+
+
+			<nav class="navbar navbar-light fixed-top" style="opacity:-2px; background-color:blue;" id="navigation">
+					<div class="navbar-brand" style="font-style:italic;">
+						<a href="#" clas="btn" id="0" style="border-radius:300px;font-style:italic; color:orange;border-radius:10px;"><b>OnlineShopping</b></a>
+					</div>
+
+					<div id="dropdownmobile"></div>
+					<ul class="nav nav-pills" id="headerbar">
+						<li class="nav-item active"><a type="button"  class="btn btn-link" href="http://192.168.56.101:7870/user/{{authorizedid}}/home.html" id="b" style="color:white; padding:20px; background-color:orange;"> Home</a></li>
+						<li class="nav-item"><a type="button" href="http://192.168.56.101:7870/user/{{authorizedid}}/products.html" class="btn btn-link" href="#" id="b" style="color:white; padding:20px;"> Product</a></li>
+						<li class="nav-item"><a type="button" href="http://192.168.56.101:7870/user/{{authorizedid}}/about.html" class="btn btn-link" href="#" id="d" style="color:white; padding:20px;">  About us</a></li>
+						<li class="nav-item"><a type="button" href="http://192.168.56.101:7870/user/{[authorizedid}}/contact.html" class="btn btn-link" href="#" id="e" style="color:white; padding:20px;"> Contact us</a></li>
+						<li class="nav-item"><a type="button" href="#" class="btn btn-link" id="m" style="color:white;padding:20px;"><i class="fa fa-shopping-cart" style="font-size:25px;"></i></a></li>
+						<li class="nav-item dropdown">
+							<a type="button"  class="btn btn-link dropdown-toggle" data-toggle="dropdown" id="f" data-target="#testmenu" style="color:white; padding:20px;">
+								<i style="font-size:30px;" class="fa fa-user-circle"></i>
+							</a>
+							<div class="dropdown-menu dropdown-menu-right" id="testmenu">
+								<a type="button" href="/user/settings.html#first" class="btn btn-link dropdown-item"> Your Profile</a>
+								<a type="button" href="/user/settings.html#second" class="btn btn-link dropdown-item"> Notification </a>
+								<a type="button" href="/user/message.html#third" class="btn btn-link dropdown-item"> Message </a>
+								<a type="button" href="logout.html" class="btn btn-link dropdown-item"> Logout </a>
+							</div>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</div>
+	<br></br>
+	<center><img src="http://192.168.56.101:7870/static/empty.png" style="height:500px; width:600px;">
+	<br>
+	<a type="button" href="http://192.168.56.101:7870/user/{{authorizedid}}/home.html" class="btn btn-lg btn-default" style="width:300px; background-color:#297F7A;color:white;">Continue Shopping </a>
+	</center>
+</body>
+</html>

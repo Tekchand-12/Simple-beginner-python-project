@@ -1,0 +1,1358 @@
+<html>
+<head>
+	<title> Welcome </title>
+	<link  rel="icon"href="/static/logo.png" type="image/png">
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+ <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+</script>
+
+<script>
+	sessionStorage.setItem("AuthorizationUserId","{{authorizationuser}}");
+	sessionStorage.setItem("CF_Authentication","{{CF_AUTH_ID}}");
+
+	function handle()
+	{
+				
+				var newdrop=document.getElementById("dropdownmobile");
+
+				var dropinside=document.createElement("ul");
+				dropinside.setAttribute("class","nav navbar-nav collapse flex-column");
+				var dropitems1=document.createElement("li");
+				var firstdrop1=document.createElement("a");
+				firstdrop1.setAttribute("href","#");
+				var firsttextnode1=document.createTextNode("Home");
+				firstdrop1.appendChild(firsttextnode1);
+				dropitems1.appendChild(firstdrop1);
+				dropinside.appendChild(dropitems1);
+
+				var dropitems2=document.createElement("li");
+				var firstdrop2=document.createElement("a");
+				firstdrop2.setAttribute("href","http://192.168.56.101:7870/product.html");
+				var firsttextnode2=document.createTextNode("Product");
+				firstdrop2.appendChild(firsttextnode2);
+				dropitems2.appendChild(firstdrop2);
+				dropinside.appendChild(dropitems2);
+
+				var dropitems3=document.createElement("li");
+				var firstdrop3=document.createElement("a");
+				firstdrop3.setAttribute("href","about.html");
+				var firsttextnode3=document.createTextNode("Aboutus");
+				firstdrop3.appendChild(firsttextnode3);
+				dropitems3.appendChild(firstdrop3);
+				dropinside.appendChild(dropitems3);
+
+
+				var dropitems4=document.createElement("li");
+				var firstdrop4=document.createElement("a");
+				firstdrop4.setAttribute("href","login.html");
+				var firsttextnode4=document.createTextNode("Login");
+				firstdrop4.appendChild(firsttextnode4);
+				dropitems4.appendChild(firstdrop4);
+				dropinside.appendChild(dropitems4);
+
+				var dropitems5=document.createElement("li");
+				var firstdrop5=document.createElement("a");
+				firstdrop5.setAttribute("href","register.html");
+				var firsttextnode5=document.createTextNode("Signup");
+				firstdrop5.appendChild(firsttextnode5);
+				dropitems5.appendChild(firstdrop5);
+				dropinside.appendChild(dropitems5);
+
+
+				var dropitems6=document.createElement("li");
+				var firstdrop6=document.createElement("a");
+				firstdrop6.setAttribute("href","contact.html");
+				
+				var firsttextnode6=document.createTextNode("Contact us");
+				firstdrop6.appendChild(firsttextnode6);
+				dropitems6.appendChild(firstdrop6);
+				dropinside.appendChild(dropitems6);
+				
+				newdrop.appendChild(dropinside);
+				
+	}
+	function adjuster()
+	{
+		document.getElementById("unique").style.width="500px";
+		document.getElementById("unique").style.height="200px";
+		var formhandler=document.getElementById("rootid");
+		formhandler.setAttribute('class','justify-content-center');
+		
+	}
+
+		//$("#mycard").css('display','none');
+	
+
+	
+	$(window).on('resize load',function()
+	{
+		
+		var counter= new XMLHttpRequest();
+			counter.onreadystatechange=function()
+			{
+				if(this.readyState == 4 && this.status==200)
+				{
+					
+					myjsonhandler=JSON.parse(this.responseText).Products.length;
+					if(myjsonhandler != 0)
+					{
+
+
+					var updatecounter=document.getElementById("m");
+					var number=document.getElementById("testicon");
+					number.setAttribute("class","badges");
+					number.style.position="relative";
+					number.style.borderRaidus="50%";
+					number.style.left="-5px";
+					number.style.top="10px";
+					number.style.backgroundColor="red";
+					number.innerHTML=myjsonhandler;
+					updatecounter.appendChild(number);
+
+					}
+					else
+					{
+						document.getElementById("errorhandler").style.backgrounImage="url('http://192.168.56.101:7870/static/empty/png";
+					}
+			
+				}
+			}
+			counter.open("GET","http://192.168.56.101:7870/user/{{Authorizeduserid}}/cart.json",true);
+			counter.send();
+		$(window).scrollTop(0);
+			if(navigator.userAgent.toString().match('Android'))
+			{
+				document.querySelector("#optionjumbo .row").childNodes[1].class="col-sm-12";
+				$('body').css("overflow-x","hidden");
+				$("#unique1,#unique2,#unique3,#unique4,#unique5,#unique6,#unique7,#unique8,#unique9").each(function()
+					{
+						$(this).css("width","900px");
+						$(this).css("height","500px");
+					});
+				$("#headerbar").hide();
+				$("#togglebutton").show();
+				handle();
+				$("#constid1,#constid2,#constid3,#constid4").each(function()
+					{
+						$(this).css("width","1000px");
+						$(this).css("height","100%");
+					});
+				document.getElementById("servicejumbo").style.width="1000px";
+				$("#endjumbo").css("height","100%");
+
+
+			}
+			else
+			{
+				if(window.innerWidth <= 700)
+				{	
+					$("#myspinner").css("position","relative");
+					$("#myspinner").css("top","-40px");
+					$("#textsearch").css({"position":"relative","top":"-40px"});
+					$("#mysearch").css("width","200px");
+					$("#mylist").css("width","250px");
+					$("#headerbar").hide();
+					$("#mylist").css("top","-105px");
+					$("#togglebutton").show();
+					document.querySelector('.row .col-lg-12 .carousel').style.width="500px";
+
+					$("#constid1,#constid2,#constid3,#constid4").each(function()
+					{
+						$(this).css("width","1000px");
+						$(this).css("height","500px");
+					});
+										$("#endjumbo").css("top","90px");
+
+
+
+					
+				}
+				else if(window.innerWidth <= 1000)
+				{
+					$("#mysearch").css("width","400px");
+					$("#mylist").css("width","450px");
+					$("#headerbar").show();
+					document.getElementById("mylist").style.removeProperty("top");
+					$("#togglebutton").hide();
+					document.querySelector('.row .col-lg-12 .carousel').style.width="100%";
+					
+					$("#constid1,#constid2,#constid3,#constid4").each(function()
+						{
+							$(this).css("width","1000px");
+							$(this).css("height","650px");
+						});
+
+				}
+				else
+				{
+					document.getElementById("mylist").style.removeProperty("top");
+
+					$("#mysearch").css("width","500px");
+					$("#mylist").css("width","550px");
+					$("#headerbar").show();
+					$("#togglebutton").hide();
+					document.querySelector('.row .col-lg-12 .carousel').style.width="100%";
+					
+					$("#constid1,#constid2,#constid3,#constid4").each(function()
+						{
+							$(this).css("width","1400px");
+							$(this).css("height","650px");
+						});
+					$("#endjumbo").css("top","90px");
+
+
+				}
+			}
+				
+	});
+	$(document).ready(function()
+	{
+		$("#clickchat").on('click',function()
+		{
+			$("#mycard").css('display','block');
+		});
+
+	
+
+		$(function()
+		{
+			AOS.init();
+		});
+		var t1=5;
+		let p2;
+		var myarr=['Laptop','Laptops','Printer','printer','Printers','printers','MobilePhone','Computer','computer',"backcard"]
+
+		$("#mysearch").on("keyup",function()
+		{
+			document.getElementById("responseul").innerHTML="";
+			var datasend=$("#mysearch").val();
+			var tester=datasend.toString();
+
+			if(tester!='')
+			{
+
+				$.ajax({
+					url:"http://192.168.56.101:7870/product.json?q="+datasend,
+					method:"get",
+					cache:false,
+					success:function(response,statusText)
+					{
+						
+						myobj=JSON.parse(response);
+						
+						if(datasend == "samsung"||datasend=="Samsung")
+						{
+							t1=Object.keys(myobj.products.MobilePhone.Samsung);
+						}
+						else if(datasend == "apple"||datasend=="Apple")
+						{
+							t1=Object.keys(myobj.products.MobilePhone.apple);
+						}
+						else if(datasend == "computer" || datasend == "Computer")
+						{
+							t1=Object.keys(myobj.products.Computer);
+						}
+						else if(datasend == "MobilePhone" || datasend == "mobilephone")
+						{
+							t1=Object.keys(myobj.products.MobilePhone);
+						}
+						else if(datasend == "vivo"||datasend=="Vivo")
+						{
+							t1=Object.keys(myobj.products.MobilePhone.vivo);
+						}
+						else if(datasend == "Laptop" || datasend == "laptop")
+						{
+							t1=Object.keys(myobj.products.Laptop);
+						}
+						else if(datasend == "Printers" || datasend == "printers")
+						{
+							t1=Object.keys(myobj.products.Printers);
+						}
+						else
+						{							
+								if(datasend in myobj.products.Laptop)
+								{
+									p1=datasend;
+									p2=myobj.products.Laptop;
+								}
+								else if(datasend in myobj.products.MobilePhone.Samsung)
+								{
+									p1=datasend;
+									p2=myobj.products.MobilePhone.Samsung;
+								}
+								else if(datasend in myobj.products.MobilePhone.apple)
+								{
+									p1=datasend;
+									p2=myobj.products.MobilePhone.apple;
+								}
+								else if(datasend in myobj.products.MobilePhone.vivo)
+								{
+									p1=datasend;
+									p2=myobj.products.MobilePhone.vivo
+								}
+								else if(datasend in myobj.products.Printers)
+								{
+									p1=datasend;
+									p2=myobj.products.Printers;
+								}
+								else if(datasend in myobj.products.Computer)
+								{
+									p1=datasend;
+									p2=myobj.products.Computer
+								}
+								else
+								{
+								}
+							
+						}
+						var responselist,n;
+						
+						var  listchecker=document.getElementById("responseul").style.float="center";
+						if(t1!=5)
+						{
+							let childtesting=document.getElementById("responseul");
+							if(childtesting.firstChild)
+							{
+							while(childtesting.firstChild)
+							{
+								childtesting.removeChild(childtesting.firstChild);
+							}
+						}
+							document.getElementById("responseul").style.overflow="auto";
+							document.getElementById("responseul").style.height="300px";
+							for(var u=0; u<=t1.length-1;u++)
+							{
+							var listappend=document.createElement("li");
+							listappend.setAttribute("style","list-style:none;");
+							listappend.setAttribute("class","nav-item");
+
+							var firstitem=document.createElement("a");
+							firstitem.setAttribute("class","nav-link");
+							firstitem.setAttribute("href","#")
+							var firsttext=document.createTextNode(t1[u]);
+							firstitem.appendChild(firsttext);
+							listappend.appendChild(firstitem);
+							$("#responseul").append(listappend);
+							$("#responseul").show();
+
+							}
+						}
+						else if(p1)
+						{
+							document.getElementById("responseul").style.removeProperty("overflow");
+							document.getElementById("responseul").style.removeProperty("height");
+							let childgoli=document.getElementById("responseul");
+							if(childgoli.firstChild)
+							{
+							while(childtesting.firstChild)		session['USER_SESSION_CLIENT']=finalauthheader
+
+							{
+								childtesting.removeChild(childgoli.firstChild);
+							}
+							}
+							
+
+							var oldlengths=document.getElementById("responseul");
+							var listappend=document.createElement("li");
+							listappend.setAttribute("style","list-style:none;");
+							listappend.setAttribute("class","nav-item");
+
+							var firstitem=document.createElement("a");
+							firstitem.setAttribute("class","nav-link");
+							firstitem.setAttribute("href","#")
+							var firsttext=document.createTextNode(p1);
+							firstitem.appendChild(firsttext);
+							listappend.appendChild(firstitem);
+							$("#responseul").append(listappend);
+							$("#responseul").show();
+	
+						}
+						else
+						{
+						
+							let childtesting=document.getElementById("responseul");
+							while(childtesting.firstChild)
+							{
+								childtesting.removeChild(childtesting.firstChild);
+							}
+
+							document.getElementById("responseul").style.removeProperty="overflow";
+							document.getElementById("responseul").style.removeProperty="300px";
+
+							var listappend=document.createElement("li");
+							listappend.setAttribute("style","list-style:none;");
+							listappend.setAttribute("class","nav-item");
+
+							var firstitem=document.createElement("span");
+							firstitem.setAttribute('style','font-style:italic;color:#9CA9AA');
+							var firsttext=document.createTextNode("Not Found");
+							firstitem.appendChild(firsttext);
+							listappend.appendChild(firstitem);
+							$("#responseul").append(listappend);
+							$("#responseul").show();
+							
+						}
+
+					},
+					error:function(error)
+					{
+					}
+
+				});
+			}
+			else
+			{
+				$(document).ajaxStop(function()
+				{
+					$("#responseul").hide();
+				});
+			}
+			});
+
+		$("#mysearch").on("click",function()
+		{
+			$("#mylist").css('display','inline-block');
+			$("#responseul").hide();
+			if($("#mysearch").val()!="")
+			{
+				$("#mylist").css('display','block');
+				$("#responseul").show();
+			}
+		
+		});
+		$("body").on('click',function()
+		{
+			$("#responseul").hide();
+							
+		});
+	
+
+
+		$("#mysearch").on('keyup',function()
+		{
+			
+			if(document.getElementById("responseul").firstElementChild)
+			{
+				document.getElementById("responseul").innerHTML="";				
+			}
+
+			$("#responseul").css("display","block")
+				
+			if($("#mysearch").val()!='')
+			{
+
+				$("#mylist").hide();
+				$("#responseul").css("display","block");
+			}
+			else
+			{
+				//$("#responseul").css("display","none");
+				document.getElementById("responseul").style.removeProperty("height");
+				document.getElementById("responseul").style.removeProperty("overflow");
+				var moli=document.getElementById("responseul");
+				while(moli.firstChild)
+				{
+					moli.removeChild(moli.firstChild);
+				}
+
+				$("#mylist").show();
+			}
+			
+		});
+
+		$("#resptest1,#resptest2,#resptest3").on('mouseover',function()
+		{
+			$(this).css("background-color","black");
+			document.getElementById("resptest").style.backgroundColor="black";
+		});
+		$("#resptest1,#resptest2,#resptest3").on("mouseleave",function()
+		{
+			$(this).css("background-color","#216C17");
+		});
+		$("#mylist").mouseleave(function()
+		{
+			$("#mylist").hide();
+		});
+		if(!$("mysearch").text=='')
+		{
+			$("#mylist").hide();
+		}
+	
+		$("#mylist").on('click','li',function()
+		{
+			$("#responsejumbo").remove();
+		});
+		$("#myul").on("click","button",function()
+		{
+			var userrequest=$("button").val();
+			if($("#mysearch").val(userrequest))
+			{
+				$("#myul").hide();
+				
+			}
+			else if($("#mysearch").click())
+			{
+				$("#myul").show();
+			}
+			else if($("#mysearch").val()!='')
+			{
+				$("#myul").show();
+			}
+			else
+			{
+				$("#myul").show();
+			}
+		});
+
+		
+		$("#responseul").on('click','li',function()
+		{
+
+			$("#mysearch").val($(this).text());
+			$("#responseul").hide();
+
+		});
+		
+		$(document).on('scroll',function()
+		{
+			if($(document).scrollTop() > 200)
+			{
+				$("#navigation").css("background-color","blue");
+				$(".nav nav-pills").css("color","blue");
+			}
+			else
+			{
+				$("#navigation").css("background-color","transparent");
+				$(".nav nav-pills").css("color","white");	
+
+			}
+		});
+
+		$("#responseul,#mylist").on('click','li',function()
+		{
+			var searchvalue=$(this).text();
+			var mystripdata=searchvalue.replace(/\s/g,"");
+			$("#mysearch").val(mystripdata);
+			$("#mylist").hide();
+
+
+			$.ajax
+			({
+
+				url:"http://192.168.56.101:7870/product.json?query="+mystripdata,
+				method:'get',
+				cache:false,
+				success:function(response,statusText)
+				{
+					var ajaxhandler=document.getElementById("ajaxsearch");
+					var columstest=document.createElement("div");
+					columstest.setAttribute("class","col-lg-12");
+					columstest.setAttribute("id","oldcolumn");
+					ajaxhandler.setAttribute("class","row");
+					ajaxhandler.appendChild(columstest);
+
+					var jumbocreate=document.createElement("div");
+					jumbocreate.setAttribute("class","jumbotron");
+					jumbocreate.setAttribute('id','responsejumbo');
+					jumbocreate.setAttribute("style","background-color:white");
+					columstest.appendChild(jumbocreate);
+
+			
+					var a=1;
+						function redirectfunction()
+						{
+							window.location="http://192.168.56.101:7870/login.html";
+						}
+
+
+					var namecounter=777777;
+					var pricecounter=999999;
+					var buttonid=888888;
+					var counting=0;
+					function configuration(imagesource,partyname,partyvalue)
+					{
+
+						var myrow=document.getElementById('responsejumbo');
+								var sidefloter=document.createElement("img");
+								if($("#mysearch").val() == "MobilePhone")
+								{
+									mydivhandler=document.createElement("div");									
+									sidefloter.setAttribute("src",imagesource);
+									sidefloter.setAttribute("style","height:300px;width:1000px; border-radius:25px;");
+									mydivhandler.id="respimage"+a;
+									a=a+1;
+
+									sidefloter.class="img-fluid justify-content-center";
+									var mybreaker=document.createElement("br");
+									myrow.appendChild(mybreaker);
+									mydivhandler.appendChild(sidefloter);
+									myrow.appendChild(mydivhandler);
+								}
+								else
+								{
+								sidefloter.setAttribute("src",imagesource);
+								sidefloter.setAttribute("style","height:350px;width:350px;display:inline-block;");
+								sidefloter.setAttribute("class","img-fluid");
+								sidefloter.setAttribute("id",counting)
+								myrow.appendChild(sidefloter);
+
+
+								var pricebreaker=document.createElement("br");
+								
+
+								var buttoncreater=document.createElement("button");
+
+								buttoncreater.setAttribute("style","position:relative;float:right;background-color:#40B0D1;color:white;width:300px;display:inline-block;top:100px;");
+								buttoncreater.setAttribute("class","btn btn-lg btn-default");
+								buttoncreater.setAttribute("id",buttonid);
+								
+								var textcreater=document.createTextNode("Add to Cart");
+
+								buttoncreater.appendChild(textcreater);
+								myrow.appendChild(buttoncreater);
+								
+								function simple()
+								{
+									document.getElementById(buttonid.toString()).style.backgroundColor="#14242F";
+								}
+								function second()
+								{
+									document.getElementById(buttonid.toString()).style.backgroundColor="40B0D1";
+								}
+								document.getElementById(buttonid.toString()).setAttribute("onmouseover",simple());
+								document.getElementById(buttonid.toString()).setAttribute("onmousedown",second());
+
+								var namerecv=document.createElement("span");
+								namerecv.setAttribute("style",'font-style:italic;font-size:25px;');
+								namerecv.setAttribute("id",namecounter);
+								var namestyle=document.createTextNode(partyname);
+								namerecv.appendChild(namestyle);
+
+								var pricehandler=document.createElement("span");
+								pricehandler.setAttribute("id",pricecounter);
+
+								var pricename=document.createTextNode('Rs.'+partyvalue);
+								pricehandler.appendChild(pricename);
+
+				
+								myrow.appendChild(namerecv);
+								myrow.appendChild(pricebreaker);
+								myrow.appendChild(pricehandler);
+								
+								var imgsource=btoa(document.getElementById(counting).src);
+								var productnamesrc=btoa(document.getElementById(namecounter).innerHTML);
+								var pricenamesrc=btoa(document.getElementById(pricecounter).innerHTML);
+
+
+								function suni()
+								{
+									var testbutton="#"+buttonid.toString();
+									$(testbutton).on('click',function()
+									{
+										window.location='http://192.168.56.101:7870/user/{{authorizationuser}}/buy.html?request='+imgsource+'&'+'productname='+productnamesrc+'&'+'productprice='+pricenamesrc;
+
+									});
+								}
+								var adder=document.getElementById(buttonid.toString());
+								adder.setAttribute('onclick',suni());
+								var underline=document.createElement("hr");
+								underline.setAttribute("style","font-weight:bold;");
+								myrow.appendChild(underline);
+							}
+							$("#respimage3,#respimage2,#respimage1").each(function()
+							{
+
+								$(this).attr("data-aos","zoom-in")
+								$(this).attr("data-aos-duration","0");
+							});
+							$("#respimage1,#respimage2,#respimage3").on('mouseover',function()
+							{
+								$(this).first().css("opacity","0.2");
+								var respbutton=document.createElement("button");
+								respbutton.class="btn btn-default btn-lg";
+
+								var textnode=document.createTextNode("ShopNow");
+								respbutton.appendChild(textnode);
+								$(this).first().append(respbutton);
+								
+
+							});
+					
+							$("#respimage1,#respimage2,#respimage3").on('mouseover',function()
+							{
+								$(this).first().css("opacity","0.2");
+								var respbutton=document.createElement("button");
+								respbutton.class="btn btn-default btn-lg";
+
+								var textnode=document.createTextNode("ShopNow");
+								respbutton.appendChild(textnode);
+								$(this).first().append(respbutton);
+
+								
+
+							});
+							$("#respimage1,#respimage2,#respimage3").on('mouseleave',function()
+							{
+								$(this).first().css("opacity","");
+								$(this).find('button').remove();
+								
+							});
+
+							if($(this).first().next().nextAll() > 1)
+							{
+								$(this).first().next().nextAll().remove();
+							}
+		
+						
+					}
+					$("#myspinner,#textsearch").css("display","block");
+					setTimeout(function(){$("#myspinner,#textsearch").css("display","none");},3000);
+					setTimeout(function(){$("#loadingimage").css("display","none");},3000);
+					if(myarr.includes(mystripdata))
+					{
+						setTimeout(function()
+						{
+							var convertresponse=JSON.parse(response);
+							var myvalue=$("#mysearch").val().trim();
+							if($("#mysearch").val() == "MobilePhone")
+							{
+								mygetter=myarr.indexOf("backcard");
+								myvalue=myarr[mygetter];
+							}
+							var mykeys=Object.keys(convertresponse.products[myvalue]);
+							var myvalues=Object.values(convertresponse.products[myvalue]);
+						
+							if(myvalue == "backcard")
+							{
+								for(var metergoli=0;metergoli<=mykeys.length;metergoli++)
+								{
+									configuration(myvalues[metergoli].image,"","");
+								}
+								
+							}
+							else
+							{
+							for(var gulli=0;gulli<=mykeys.length;gulli++)
+							{	
+							
+								configuration(myvalues[gulli].image,mykeys[gulli],myvalues[gulli].Price);
+									namecounter+=1;
+								counting+=1;
+								pricecounter+=1;
+								buttonid+=1;
+
+							}
+							}
+															
+						},3000);
+					
+					setTimeout(function(){document.getElementById("cartbutton").style.display="block";},3000);
+					setTimeout(function(){$("body").animate({scrollTop:'600'});},3000);
+			
+					}
+					else
+					{
+						document.getElementById("responsejumbo").remove();
+						var mytestingdata=Object.keys(p2[mystripdata]);
+						var imagevalue=Object.values(p2[mystripdata].image).toString().replace(/,/g,"");						
+						var testingdatavalue=Object.values(p2[mystripdata].Price).toString().replace(/,/g,"");
+						
+						configuration(imagevalue,searchvalue,testingdatavalue);
+						
+						setTimeout(function(){document.getElementById("cartbutton").style.display="block";},3000);
+						setTimeout(function(){$("body").animate({scrollTop:'600'});},3000);
+						$("#responseul").empty();		
+					}
+				}
+			});
+			
+		});
+		
+	if(document.getElementById("mysearch").value == "")
+	{
+		document.getElementById("resposneul").style.display="none";
+	}
+
+	
+});
+
+
+
+</script>
+<style>
+	
+	#mylist
+	{
+		list-style:none; 
+		display:none; 
+		position:relative; 
+		width:550px;
+		top:-90px;
+		text-align:justify;
+		background-color:#E7DCDA;
+
+	}
+	#mylist li:hover
+	{
+		background-color:#DCD8D7;
+
+	}
+	
+	#firstlist
+	{
+		position:relative;
+		float:right;
+		display:inline-block;
+	}
+	#myspinner,#textsearch
+	{
+		display:none;
+	}
+	#secondlist
+	{
+		position:relative;
+		float:right;
+		display:inline-block;
+	}
+	#thirdlist
+	{
+
+		position:relative;
+		float:right;
+		display:inline-block;
+	}
+	#fourthlist
+	{
+
+		position:relative;
+		float:right;
+		display:inline-block;
+	}
+	#responseul li:hover
+	{
+		background-color:#DCD8D7;
+	}
+	#fifthlist
+	{
+		position:relative;
+		display:inline-block;
+		float:right;
+	}
+	#os
+	{
+		color:green;
+		display:inline-block;
+		float:left;
+		font-size:25px;
+		position:relative;
+	}
+	#disableitem
+	{
+		color:red;
+		display:inline-block;
+		float:left;
+		font-size:25px;
+		position:relative;
+	}
+	#third
+	{
+		position:relative;
+		float:right;
+	}
+	
+</style>
+
+
+<body onselectstart="return false;" style="overflow-x: hidden;">
+		<div class="row">
+			<div class="col-lg-12">
+
+				<div id="demo" class="carousel slide" data-ride="carousel" style="position:absolute;">
+					<div class="carousel-inner" style="background-color:black; height:650px;">
+			    		<div class="carousel-item active">
+			      			<img src="http://192.168.56.101:7870/static/frontc1.jpg" id="constid1" style="height:650px; width:1400px;">
+			    		</div>
+			    		<div class="carousel-item">
+			      			<img src="http://192.168.56.101:7870/static/frontc2.jpg" id="constid2" style="height:650px; width:1400px;">
+			    		</div>
+			    		<div class="carousel-item">
+			      			<img src="http://192.168.56.101:7870/static/frontc3.webp" id="constid3" style="height:650px; width:1400px;">
+			    		</div>
+			    		<div class="carousel-item">
+			    			<img src="http://192.168.56.101:7870/static/frontc4.jpg" id="constid4" style="height:650px; width:1400px;">
+			    		</div>
+			  			</div>
+
+			 				 <a class="carousel-control-prev" href="#demo" data-slide="prev" style="margin: 400px 0; border-radius:60px;">
+			 					 <i class="fa fa-chevron-left" style="font-size:75px;"></i>
+			 				</a>
+			  				<a class="carousel-control-next" href="#demo" data-slide="next" style="margin:400px 0px; border-radius:60px;">
+			  					<i class="fa fa-chevron-right" style="font-size:75px; position:relative; left:-50px;"></i>
+			  				</a>
+						</div>
+					</div>
+				</div>
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-lg-12">
+			<nav class="navbar navbar-light fixed-top" style="opacity:-2px" id="navigation">
+					<div class="navbar-brand" style="font-style:italic;">
+						<a href="#" clas="btn" id="logoid" style="border-radius:300px;font-style:italic; color:orange;border-radius:10px;"><b>OnlineShopping</b></a>
+					</div>
+
+					<div id="dropdownmobile"></div>
+						<ul class="nav nav-pills" id="headerbar">
+						<li class="nav-item active"><a type="button" href="#" class="btn btn-link" href="index.html" id="b" style="color:white; padding:20px; background-color:orange;"> Home</a></li>
+						<li class="nav-item"><a type="button" href="http://192.168.56.101:7870/user/{{authorizationuser}}/products.html" class="btn btn-link" href="#" id="b" style="color:white; padding:20px;"> Product</a></li>
+						<li class="nav-item"><a type="button" href="http://192.168.56.101:7870/user/{{authorizationuser}}/about.html" class="btn btn-link" href="#" id="d" style="color:white; padding:20px;">  About us</a></li>
+						<li class="nav-item"><a type="button" href="http://192.168.56.101:7870/user/{{authorizationuser}}/contact.html" class="btn btn-link" href="#" id="e" style="color:white; padding:20px;"> Contact us</a></li>
+			            <li class="nav-item"><a type="button" href="#" class="btn btn-link" id="m" style="color:white;padding:20px;"><i class="fa fa-shopping-cart" style="font-size:25px;"></i></a></li>
+
+			            <script>
+			            	function logout()
+			            	{
+			            		var sender=new XMLHttpRequest();
+			            		sender.onreadystatechange=function()
+			            		{
+			            			if(this.readyState == 4 && this.status == 200)
+			            			{
+			            				window.location="http://192.168.56.101/login.html";
+			            			}
+			            		}
+			            		sender.open("POST","http://192.168.56.101:7870/user/{{authorizationuser}}/home.html",true);
+			            		sender.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+			            		sender.setRequestHeader("X-CSRF-Token","{{csrf_token()}}");
+			            		sender.send("LogoutId="+sessionStorage.getItem('CF_Authentication'));
+			            	}
+			            </script>
+						<li class="nav-item dropdown">
+							<a type="button"  class="btn btn-link dropdown-toggle" data-toggle="dropdown" id="f" data-target="#testmenu" style="color:white; padding:20px;">
+								<i style="font-size:30px;" class="fa fa-user-circle"></i>
+							</a>
+							<div class="dropdown-menu dropdown-menu-right" id="testmenu">
+								<a type="button" href="/user/{{authorizationuser}}/settings.html#first" class="btn btn-link dropdown-item"> Your Profile</a>
+								<a type="button" href="/user/{{authorizationuser}}/settings.html#second" class="btn btn-link dropdown-item"> Notification </a>
+								<a type="button" href="/user/{{authorizationuser}}/message.html#third" class="btn btn-link dropdown-item"> Message </a>
+								<a type="button" href="/user/{{authorizationuser}}/logout.html" onclick="logout();" class="btn btn-link dropdown-item"> Logout </a>
+							</div>
+						</li>
+					</ul>
+					<button type="button" class="btn btn-success" aria-hidden="true" data-toggle="collapse" data-target="#dropdownmobile" style="display:none;"  id="togglebutton"><i class="fa fa-bars"></i></button>
+
+				</nav>
+			</div>
+		</div>
+		<br>
+	
+	<div class="row">
+		<div class="col-lg-2">
+		</div>
+		<div class="col-lg-8">
+			<center>
+			<span style="color:#A75511;">
+				<h1 style="padding-top:200px;" data-aos="fade-down" data-aos-duration="1500"> Welcome</h1>
+				<p data-aos="fade-up" data-aos-duration="1500"> Best Products Avaialble and High Compatibility</p>
+			</span>
+		</center>
+		</div>
+	</div class="col-lg-2"></div>
+	</div>
+	<br></br>
+	
+	<div class="row">
+		<div class="col-lg-12">
+			<div id="rootid">
+			<div class="form-inline justify-content-center" style="top:-40px; position:relative;">
+				<div class="form-group">
+					<input type="text"  id="mysearch" style="width:500px;" placeholder="Search Products" maxlength="500" class="form-control">
+				</div>
+				<div class="form-group">
+					<button type="button" id="mysearchclick" value="" class="form-control btn btn-primary btn-md" style="width:50px;"><i class="fa fa-search"></i></button>
+				</div>
+			</div>
+			<br></br>
+			<ul id="responseul" class="nav nav-pills flex-column" style="color:skyblue; text-align:justify; list-style-type:none; display:none;left:342px; background-color:white;position:relative;width:550px;">
+				
+			</ul>
+
+			<center>
+
+			<button type="button" class="btn btn-md" id="clickchat" style="background-color:#293D7F; position:fixed; bottom:0px; right:0px; float:right;border:1px solid; border-radius:50%;"><i class="fa fa-comment-o" style="font-size:60px; color:white;"></i></button>
+
+			<div class="card" id="mycard" style="position:fixed; width:300px;float:right; border-radius:10px; bottom:50px; right:25px;  display:none;">
+				<div class="card-header" style="background-color:black;color:white; height:70px;">
+					<span style="font-size:20px;"><button type="button" class="btn btn-default btn-md" style="border-radius:50%; position:relative; float:left; margin-left:-20px;"><img src="http://192.168.56.101:7870/static/team/p6.jpg" style="border-radius:50%; height:50px; width:50px; position:relative;"></button> <center>Alice</center></span>
+				</div>
+				<div class="card-body" style="height:400px; background-color:#808364;">
+					<div class="alert alert-success" style="float:right; background-color:blue;color:white; border-radius:30px; width:200px; font-size:15px;"> how may i can help you</div>
+				</div>
+				<div class="card-footer">
+					<input type="text" class="form-control" placeholder="Type a message" style="display:inline; float:left; width:200px;">
+					<button type="btn btn-default btn-lg" style="background-color:#2937DF; border-radius:50%;float:right;"><i class="fa fa-paper-plane" style="color:white;font-size:30px;"></i></button>
+				</div>
+			</div>
+
+			
+			<ul id="mylist" class="nav nav-pills flex-column">
+				
+				<li class="nav-item"><img src="/static/listlogo/laptop.png" style="position:relative;float:left; height:40px;width:40px;"><a type="button" class="nav-link" class="firstlist"> Laptop </a></li>
+				<li class="nav-item"><img src="/static/listlogo/phone.jpeg" style="position:relative;float:left; height:40px;width:40px;"><a type="button" class="nav-link" class="firstlist"> MobilePhone </a></li>
+				<li class="nav-item"><img src="/static/listlogo/printer.jpeg" style="position:relative;float:left; height:40px;width:40px;"><a type="button" class="nav-link" class="firstlist"> Printers </a></li>
+				<li class="nav-item"><img src="/static/listlogo/keyboard.png" style="position:relative;float:left; height:40px;width:40px;"><a type="button" class="nav-link" class="firstlist"> Keyboard </a></li>
+				<li class="nav-item"><img src="/static/listlogo/computer.jfif" style="position:relative;float:left; height:40px;width:40px;"><a type="button" class="nav-link" class="firstlist"> Computer </a></li>	
+
+			</ul>
+			
+			<div class="spinner-border" role="status" style="color:#7656D8;" id="myspinner">
+				<span class="sr-only"></span>
+			</div>
+			<span id="textsearch" style="color:#7656D8;">Searching Products ....</span>
+
+			</center>
+		</div>
+	</div>
+	</div>
+</div>
+<br><br><br><br><br></br>
+<div id="ajaxsearch"></div>
+<div class="row">
+	<div class="col-lg-12">
+		<div class="jumbotron" style="background-color:black; color:white; width:100%; position:relative;" id="servicejumbo">
+			<div id="parser"></div>
+			<center>
+			<h1> Services </h1>
+					<hr style="width:30px; background-color:blue;">
+			</center>
+			<div class="row" data-aos="fade-right" data-aos-duration="1000">
+				<div class="col-lg-4">
+					<div class="card">
+						<div class="card-header"style="background-color:#EFCFFA;">
+							<center>
+								<p style="font-size:20px;color:black;"> Free Home Delivery</p>
+							</center>
+						</div>
+						<div class="card-body">
+							<img src="/static/services/s1.jpg" id="unique1" class="img-fluid" style="height:250px;width:400px;">
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4">
+					<div class="card">
+						<div class="card-header"style="background-color:#EFCFFA;">
+							<center>
+								<p style="font-size:20px;color:black;"> Netbanking</p>
+							</center>
+						</div>
+						<div class="card-body">
+							<img src="/static/services/s2.jpg" class="img-fluid" id="unique2" style="height:250px;width:400px;">
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4">
+					<div class="card">
+						<div class="card-header"style="background-color:#EFCFFA;">
+							<center>
+								<p style="font-size:20px;color:black;"> Debit/credit card payment</p>
+							</center>
+						</div>
+						<div class="card-body">
+							<img src="/static/services/s3.png" class="img-fluid" id="unique3" style="height:250px;width:400px;">
+						</div>
+					</div>
+				</div>
+			</div>
+			<br>
+			<div class="row" data-aos="fade-left" data-aos-duration="1000">
+				<div class="col-lg-4">
+					<div class="card">
+						<div class="card-header"style="background-color:#EFCFFA;">
+							<center>
+								<p style="font-size:20px;color:black;"> Development</p>
+							</center>
+						</div>
+						<div class="card-body">
+							<img src="/static/services/s4.png" id="unique4" class="img-fluid" style="height:250px;width:300px;">
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4">
+					<div class="card">
+						<div class="card-header"style="background-color:#EFCFFA;">
+							<center>
+								<p style="font-size:20px;color:black;"> SearchEngine Optimization</p>
+							</center>
+						</div>
+						<div class="card-body">
+							<img src="/static/services/s5.jfif" class="img-fluid" id="unique5" style="height:250px;width:400px;">
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4">
+					<div class="card">
+						<div class="card-header"style="background-color:#EFCFFA;">
+							<center>
+								<p style="font-size:20px;color:black;"> Discount</p>
+							</center>
+						</div>
+						<div class="card-body">
+							<img src="/static/services/s6.jfif" class="img-fluid" id="unique6" style="height:250px;width:400px;">
+						</div>
+					</div>
+				</div>
+			</div>
+			<br></br>
+
+			<div class="row" data-aos="fade-right" data-aos-duration="1000">
+				<div class="col-lg-4">
+					<div class="card">
+						<div class="card-header"style="background-color:#EFCFFA;">
+							<center>
+								<p style="font-size:20px;color:black;"> MovileApp Developement</p>
+							</center>
+						</div>
+					<div class="card-body">
+						<img src="/static/services/s7.jfif" class="img-fluid" id="unique7" style="height:250px;width:400px;">
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-4">
+				<div class="card">
+					<div class="card-header"style="background-color:#EFCFFA;">
+						<center>
+							<p style="font-size:20px;color:black;"> Digital Marketing</p>
+						</center>
+					</div>
+					<div class="card-body">
+						<img src="/static/services/s8.jpg" class="img-fluid"  id="unique8" style="height:250px;width:400px;">
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-4">
+				<div class="card">
+					<div class="card-header"style="background-color:#EFCFFA;">
+						<center>
+							<p style="font-size:20px;color:black;"> Maintenance</p>
+						</center>
+					</div>
+					<div class="card-body">
+						<img src="/static/services/s9.png" class="img-fluid"  id="unique9" style="height:250px;width:400px;">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="jumbotron" id="optionjumbo" style="border-bottom-right-radius:150px;border-bottom-left-radius:150px; position:relative; top:-30px; background-color:black; color:white;">
+	<div class="row" >
+		<div class="col-lg-12">
+			<center><h1> Features</h1><hr style="width:30px; background-color:blue"></center>
+		</div>
+	</div>
+	<div class="row" data-aos="fade-down" data-aos-duration="1000">	
+		<div class="col-lg-4">
+			<img src="http://192.168.56.101:7870/static/1.jpeg" style="height:300px; width:400px;border:2px solid;border-radius:10px;">
+		</div>
+		<div class="col-lg-8">
+			<p style="font-size:20px;"> Security</p>
+			<br>
+			<p> o you want to know how to trigger animations as you scroll up and down a page, without having to code a bunch of different keyframes yourself? Behold, the Animate On Scroll library is just what you are looking for!</p>
+		</div>
+	</div>
+	<br></br>
+	<div class="row" data-aos="fade-down" data-aos-duration="1000">
+		<div class="col-lg-8">	
+			<p style="font-size:20px;"> Development</p>
+			<br>
+			<p> o you want to know how to trigger animations as you scroll up and down a page, without having to code a bunch of different keyframes yourself? Behold, the Animate On Scroll library is just what you are looking for!</p>
+			
+		</div>
+		<div class="col=lg-4">
+			<img src="http://192.168.56.101:7870/static/2.jpg" style="height:300px; width:400px;border:2px solid;border-radius:10px;">
+		</div>
+	</div>
+	<br></br>
+	<div class="row" data-aos="fade-down" data-aos-duration="1000">
+		<div class="col-lg-4">
+			<img src="http://192.168.56.101:7870/static/3.jpg" style="height:300px; width:400px; border:2px solid;border-radius:10px;">
+		</div>
+		<div class="col-lg-8">
+			<p style="font-size:20px;"> Customer Service</p>
+			<br>
+			<p>o you want to know how to trigger animations as you scroll up and down a page, without having to code a bunch of different keyframes yourself? Behold, the Animate On Scroll library is just what you are looking for!</p>
+		</div>
+	</div>
+	<br>
+	<div class="row" data-aos="fade-down" data-aos-duration="1000">
+		<div class="col-lg-8">
+			<p style="font-size:20px;"> Cloud Service</p>
+			<p>o you want to know how to trigger animations as you scroll up and down a page, without having to code a bunch of different keyframes yourself? Behold, the Animate On Scroll library is just what you are looking for!</p>
+		</div>
+		<div class="col=lg-4">
+			<img src="http://192.168.56.101:7870/static/4.jpg" style="height:300px; width:400; border:2px solid;border-radius:10px;">
+		</div>
+	</div>
+</div>
+</div>
+<div class="row" style="position:relative; top:-40px;">
+	<div class="col-lg-4">
+		<div class="card" style="background-color:white;" data-aos="fade-right">
+			<div class="card-header">
+				<center>
+					<p style="font-size:20px;">Free</p>
+					<h1>$0/mo</h1>
+				</center>
+			</div>
+
+			<div class="card-body">
+				<center>
+				<i class="fa fa-check" id="os"></i><p>User</p>
+				<i class="fa fa-check" id="os"></i><p>Community Support</p>
+				<i class="fa fa-close" id="disableitem"></i><p>Style Customizer</p>
+				<i class="fa fa-close" id="disableitem"></i><p>Custom Components</p>
+				<i class="fa fa-close" id="disableitem"></i><p>Expanded Utilities</p>
+				<i class="fa fa-close" id="disableitem"></i><p>Third-party Integration</p>
+				<i class="fa fa-close" id="disableitem"></i><p>Layout Options</p>
+	<button type="button" id="resptest1" class="btn btn-default btn-lg" style="width:300px; color:white; font-weight:bold;background-color:#216C17;"> Free Trial</button>
+
+			</center>
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-4">
+		<div class="card" style="background-color:white;" data-aos="fade-right">
+			<div class="card-header">
+				<center>
+					<p style="font-size:20px;">Paid</p>
+					<h1>$19/mo</h1>
+				</center>
+			</div>
+			<div class="card-body">
+				<center>
+				<i class="fa fa-check" id="os"></i><p>Upto 15 Users</p>
+				<i class="fa fa-check" id="os"></i><p>Email amd livechat Support</p>
+				<i class="fa fa-check" id="os"></i><p>Style Customizer</p>
+				<i class="fa fa-check" id="os"></i><p>Custom Components</p>
+				<i class="fa fa-check" id="os"></i><p>Expanded Utilities</p>
+				<i class="fa fa-close" id="disableitem"></i><p>Third-party Integration</p>
+				<i class="fa fa-close" id="disableitem"></i><p>Layout Options</p>
+	<button type="button" id="resptest2" class="btn btn-default btn-lg" style="width:300px; color:white; font-weight:bold;background-color:#216C17;"> Purchase Now</button>
+
+			</center>
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-4">
+		<div class="card" style="background-color:white;" data-aos="fade-right">
+			<div class="card-header">
+				<center>
+					<p style="font-size:20px;">Paid</p>
+					<h1>$100/mo</h1>
+				</center>
+			</div>
+			<div class="card-body">
+				<center>
+				<i class="fa fa-check" id="os"></i><p id="3rd">Upto Max Users</p>
+				<i class="fa fa-check" id="os"></i><p id="3rd">Email and livechat Support</p>
+				<i class="fa fa-check" id="os"></i><p id="3rd">Style Customizer</p>
+				<i class="fa fa-check" id="os"></i><p id="3rd">Custom Components</p>
+				<i class="fa fa-check" id="os"></i><p id="3rd">Expanded Utilities</p>
+				<i class="fa fa-check" id="os"></i><p id="3rd">Third-party Integration</p>
+				<i class="fa fa-check" id="os"></i><p id="3rd">Layout Options</p>
+				<button type="button"  id="resptest3" class="btn btn-default btn-lg" style="width:300px; color:white; font-weight:bold;background-color:#216C17;"> Purchase Now</button>
+
+			</center>
+			</div>
+		</div>
+	</div>
+
+	<div class="jumbotron" id="endjumbo" style="width:100%; position:relative; background-color:#1f618d">
+		<div class="row">
+			<div class="col-lg-3">
+				<center style="text-align:justify;">
+					<h1 style="color:white;"> Userful Links</h1>
+					<br>
+					<a type="button" href="http://192.168.56.101:7870/login.html" class="btn btn-link" style="color:white;">Home</a>
+					<br>
+					<a type="button"  href="http://192.168.56.101:7870/about.html" class="btn btn-link" style="color:white;">About us</a>
+					<br>
+					<a type="button"  href="http://192.168.56.101:7870/service.html" class="btn btn-link" style="color:white;">Services</a>
+					<br>
+					<a type="button"  href="http://192.168.56.101:7870/termandservice.html" class="btn btn-link" style="color:white;">Terms of Services</a>
+					<br>
+					<a type="button"  href="http://192.168.56.101:7870/policy.html" class="btn btn-link" style="color:white;">Privacy Policy</a>
+				</center>
+			</div>
+			<div class="col-lg-3">
+				<center style="text-align:justify;">
+					<h1 style="color:white;"> Our Services</h1>
+					<br>
+					<a type="button"  href="http://192.168.56.101:7870/security.html" class="btn btn-link" style="color:white;">Security</a>
+					<br>
+					<a type="button"  href="http://192.168.56.101:7870/develope.html" class="btn btn-link" style="color:white;">Development</a>
+					<br>
+					<a type="button"  href="http://192.168.56.101:7870/hosting.html" class="btn btn-link" style="color:white;">Cloud hosting</a>
+					<br>
+					<a type="button"  href="http://192.168.56.101:7870/contact.html" class="btn btn-link" style="color:white;">Customer Support</a>
+				</center>
+			</div>
+			<div class="col-lg-3">
+				<center style="text-align:justify;">
+					<h1 style="color:white;"> Connect with US</h1>
+					<br>
+					<i class="fa fa-twitter" style="color:white;font-size:25px;"></i><a type="button"  href="#" class="btn btn-link" style="color:white;">Twitter</a>
+					<br>
+					<i class="fa fa-facebook-square" style="color:white;font-size:25px;"></i><a type="button"  href="#" class="btn btn-link" style="color:white;">Facebook</a>
+					<br>
+					<i class="fa fa-google" style="color:white;font-size:25px;"></i><a type="button"  href="#" class="btn btn-link" style="color:white;">Google</a>
+					<br>
+					<i class="fa fa-instagram" style="color:white;font-size:25px;"></i><a type="button"  href="#" class="btn btn-link" style="color:white;">Instagram</a>
+				</center>
+			</div>
+			<div class="col-lg-3">
+				<center style="text-align:justify;">
+					<h1 style="color:white;"> Contact Us</h1>
+						<br>
+						<i class="fa fa-envelope" style="color:white;font-size:25px;"></i>
+						<a type="button" href="#" class="btn btn-link" style="color:white;">Support@example.com</a>
+						<br></br>
+						<i style="color:white; position:relative; font-size:25px;" class="fa fa-phone"></i>
+						<p style="color:white; display:inline;">+066634712412</p>
+						<br></br>
+						<i  class="fa fa-address-card" style="font-size:25px; color:white; position:relative;"></i>
+						&nbsp;&nbsp;&nbsp;<p style="color:white; display:inline;">M512 Washington Plot No. 96</p>
+				</center>
+			</div>
+		</div>
+		<div clsas="row">
+			<div class="col-lg-12">
+				<footer>
+					<hr style="width:100%;">
+					<br>
+					<center>
+						<p style="color:white"> All Copyright Reserved(2019-2020)</p>
+					</center>
+				</footer>
+			</div>
+		</div>
+
+	</div>
+</body>
+</html>

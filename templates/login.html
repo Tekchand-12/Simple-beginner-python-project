@@ -1,0 +1,169 @@
+{% block content %}
+
+<html>
+<meta charset="UTF-8">
+<head>
+	<title> Login </title>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+
+<script>
+	$(window).on('load',function()
+	{
+
+	if(navigator.userAgent.match('Android'))
+	{
+		$('body').css({'background-size':"500px 500px",'background-repeat':'no-repeat'});
+		$(".card").css({"left":"150px","height":"400px","width":"400px","position":"relative"});
+	}
+	else
+	{
+		$(".card").css({'height':'400px',"width":"400px"})
+	}
+});
+	function myfunc()
+	{
+		var first=document.getElementsByName("myusername")[0].value;
+		var second=document.getElementsByName("mypassword")[0].value;
+		if(first == '' && second == '')
+		{
+			document.getElementById("error").innerHTML="Please Provide username or password";
+			setTimeout(function(){document.getElementById("error").innerHTML='';},2000);
+			return false;
+		}
+		else if(first!= '' && second == '')
+		{
+			document.getElementById("error").innerHTML="Please Specifiy Password";
+			setTimeout(function(){document.getElementById("error").innerHTML='';},2000);
+			return false;
+		}
+		else if(first!='' && second!='')
+		{
+			$("#myspin").show();
+			var handler=new XMLHttpRequest();
+			var postdata='';
+			userdata={
+					'user':first,
+					'passw':second,
+					'height':screen.height,
+					'width':screen.width,
+					'hostname':window.location.hostname,
+					'url':window.location.href,
+					'protocol':window.location.protocol,
+					'pathnames':window.location.pathname,
+					'cookiecheck':navigator.cookieEnabled,
+					'browsername':navigator.appCodeName,
+					'engine':navigator.product,
+					'engineversion':navigator.ap0pVersion,
+					'UserAgent':navigator.userAgent,
+					'platform':navigator.platform,
+					'language':navigator.language,
+
+					};
+					for(const i in userdata)
+					{
+						postdata+=i+'='+userdata[i]+'&';
+					}
+					var finalpostdata=postdata.slice('&',-1);
+					handler.onreadystatechange=function()
+					{
+						var checker=JSON.parse(this.responseText);
+						myfinalresponse=checker.message;
+						if(myfinalresponse == "success")
+						{
+							if(document.getElementById("mycheck").checked ==true)
+							{
+								var userset=document.getElementById("abc").value;
+								var passet=document.getElementById("xyz").value;
+								document.cookie="username="+userset+"expires=Thu 21 Nov 2020"+'path=/';
+							}
+							document.getElementById("clickhere").disabled=true;
+							document.getElementById("clickhere").style.backgroundColor="#B9ADAB";
+							document.cookie="abc="+userset,365;
+
+							setTimeout(function(){window.location="http://192.168.56.101:7870/home.html";},3000);
+
+						}
+						else
+						{
+							setTimeout(function(){document.getElementById("myspin").style.display='none'},5000);
+							setTimeout(function(){document.getElementById("error").innerHTML="Invalid Username or Password"},5000);
+							
+						}
+						
+					}
+					var clientcsrf="{{csrf_token()}}";
+					handler.open("POST","http://192.168.56.101:7870/login.html",true);
+					handler.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=UTF-8');
+					handler.setRequestHeader('X-CSRF-Token',clientcsrf);
+					handler.send(finalpostdata);
+		}
+		else if(first=='' && second!='')
+		{
+			document.getElementById("error").innerHTML="Please Provide Username";
+			setTimeout(function(){document.getElementById("error").innerHTML='';},2000);
+			return false;
+		}
+		else
+		{
+			document.getElementById("error").innerHTML="Something is wrong";
+		}
+		
+	}
+	</script>
+<body style="background-image: url('http://192.168.56.101:7870/static/login.jpg'); background-repeat:no-repeat;">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-3"></div>
+			<div class="col-lg-6">
+				<div class="card" style="background-color:#800033;position:absolute;left:100px;">
+					<center><h1 class="card-header" style="color:white">Login</h1></center>
+					<div class="card-body">
+						<div id="loginform">
+							<div class="form-group">
+								<input type="email" id="abc" style="padding-left:40px; height:50px;" class="form-control" name="myusername" placeholder="example@domain.com" autocomplete=off required>
+								<i class="fa fa-user" style="font-size:40px;position:absolute; height:50px; width:40px; top:93px; background-color:#b8860b;"></i></div>
+							</div>
+							<br>
+							<div class="form-group">
+									<input type="hidden" name="CSRF_TOKEN" value="{{csrf_token()}}">
+							<div class="form-group">
+								<input type="password" id="xyz" style="padding-left:40px; height:50px;" class="form-control" placeholder="Enter the password" name="mypassword" required>
+								<i class="fa fa-key" style="color:black; position:absolute; height:50px; width:40px; font-size:36px; top:183px; background-color:#b8860b;"></i>
+							</div>
+							<div clas="form-group">
+								<p style="display:inline; float:left; position:relative;"><input type="checkbox" id="mycheck" class="form-control" style="border:none; margin-right:20px;width:1px; position:relative; top:7px; left:10px; display:inline; float:left;">Remember me </p>
+							</div>
+							<a href="reset.html" style="display:inline; float:right;">Forgot Password?</a>
+							<br>
+							<button type="button" name="loginsubmit"  value="msflogin" id="clickhere" class="btn btn-primary btn-lg" style="width:100%; border-radius:25px;" onclick="myfunc()"> Submit </button>
+
+`							</div>
+					</div>
+					<div id="tinu" style="position:relative; left:75px;top:-50px;">
+						<p style="color:white;"> Don't have an account? <a href="register.html">Create New</a></p>
+						<br>
+						<p id="error" style="color:yellow; position:relative; float:center;"></p>
+						<br>
+						<i class="fa fa-refresh fa-spin" id="myspin" style="display:none; left:100px; color:white; font-size:30px; position:relative;"></i>
+
+					</div>
+
+				</div>
+				<br>
+
+
+			</div>
+			<div class="col-lg-3"></div>
+	</div>
+</div>
+</body>
+</html>
+
+{% endblock %}

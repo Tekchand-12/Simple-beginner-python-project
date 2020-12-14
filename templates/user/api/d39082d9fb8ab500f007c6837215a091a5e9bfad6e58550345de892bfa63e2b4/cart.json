@@ -1,0 +1,40 @@
+{
+    "Products": [
+        {
+            "url": "http://192.168.56.101:7870/static/products/l1.webp", 
+            "Price": 215000, 
+            "name": "Mi Notebook 14 Intel Core i5-10210U 10th Gen Thin and Light Laptop(8GB/512GB SSD/Windows 10/Intel UHD Graphics/Silver/1.5Kg), XMA1901-FA Webcam", 
+            "quantity": 9
+        }, 
+        {
+            "url": "http://192.168.56.101:7870/static/products/l2.jfif", 
+            "Price": 160000, 
+            "name": "ASUS TUF Gaming FX505DT 15.6 FHD 120Hz Laptop GTX 1650 4GB Graphics (Ryzen 5-3550H/8GB RAM/512GB PCIe SSD/Windows 10/Stealth Black/2.20 Kg), FX505DT-AL106T", 
+            "quantity": 8
+        }, 
+        {
+            "url": "http://192.168.56.101:7870/static/products/l2.jfif", 
+            "Price": 880000, 
+            "name": "ASUS TUF Gaming FX505DT 15.6 FHD 120Hz Laptop GTX 1650 4GB Graphics (Ryzen 5-3550H/8GB RAM/512GB PCIe SSD/Windows 10/Stealth Black/2.20 Kg), FX505DT-AL106T", 
+            "quantity": 8
+        }, 
+        {
+            "url": "http://192.168.56.101:7870/static/products/l3.webp", 
+            "Price": 280000, 
+            "name": "ASUS VivoBook 15 Intel Celeron N3350 15.6-inch HD Laptop (4GB RAM/1TB HDD/Windows 10/Integrated Graphics/Black/2.0 kg), X540NA-GQ285T", 
+            "quantity": 2
+        }, 
+        {
+            "url": "http://192.168.56.101:7870/static/products/l3.webp", 
+            "Price": 280000, 
+            "name": "ASUS VivoBook 15 Intel Celeron N3350 15.6-inch HD Laptop (4GB RAM/1TB HDD/Windows 10/Integrated Graphics/Black/2.0 kg), X540NA-GQ285T", 
+            "quantity": 2
+        }, 
+        {
+            "url": "http://192.168.56.101:7870/static/products/l3.webp", 
+            "Price": 280000, 
+            "name": "ASUS VivoBook 15 Intel Celeron N3350 15.6-inch HD Laptop (4GB RAM/1TB HDD/Windows 10/Integrated Graphics/Black/2.0 kg), X540NA-GQ285T", 
+            "quantity": 2
+        }
+    ]
+}

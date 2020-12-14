@@ -1,0 +1,394 @@
+<html>
+<head>
+	<title> Registration</title>
+</head>
+<script src="http://192.168.56.101:7870/static/vendor/jquery/jquery.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="http://192.168.56.101:7870/static/vendor/bootstrap/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link href="http://192.168.56.101:7870/static/vendor/aos/aos.css" rel="stylesheet">
+<script src="http://192.168.56.101:7870/static/vendor/aos/aos.js"></script>
+ <link rel="stylesheet" href="http://192.168.56.101:7870/static/vendor/font.css">
+<script src="http://192.168.56.101:7870/static/vendor/bootstrap/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="http://192.168.56.101:7870/static/vendor/bootstrap4/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="http://192.168.56.101:7870/static/vendor/bootstrap4/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<style>
+
+#myusername,#mylastname,#myemail,#phone,#myaddr,#Pincode
+{
+	border-top:none; border-left:none; border-right:none;
+}
+
+</style>
+
+<script>
+	$(document).ready(function()
+	{
+		$("#visible").on('click',function()
+		{
+			if($("#mypassword").attr('type') == "password")
+			{
+				$("#mypassword").attr('type','text');
+				$("#visible i").attr('class','fa fa-eye btn btn-default');
+			}
+			else
+			{
+				$("#mypassword").attr('type','password');
+				$("#visible i").attr('class','fa fa-eye-slash btn btn-default');
+			}
+
+		});
+		$("#mypassword").on('click',function()
+		{
+			var mysuggest=document.createElement('span');
+			mysuggest.style.fontStyle="italic";
+			mysuggest.style.color="white";
+			mysuggest.id="showmsg";
+			mysuggest.innerHTML="Password Should Be 8 to 15 Chanracters Long";
+			document.getElementById("retypeappend").appendChild(mysuggest);
+		});
+		
+		$("#retypepassword").on('keyup',function()
+		{
+						$("#showmsg").hide();
+
+			if($("#mypassword").val() == $("#retypepassword").val())
+			{
+				var validate=document.createElement("span");
+				validate.id="appnedmsg";
+				var myicon=document.createElement("i");
+				myicon.setAttribute("class","fa fa-check-circle btn");
+				myicon.style.backgroundColor="white";
+				myicon.style.color="green";
+				validate.backgroundColor="white";
+
+				document.getElementById("retypeappend").appendChild(validate);
+				document.getElementById("appnedmsg").appendChild(myicon);
+
+			}
+			else
+			{
+				$("#appnedmsg").hide();
+			}
+		});
+		$("#clicksubmit").click(function()
+		{
+			var firstname=$("#myusername").val();
+			var lastname=$("#mylastname").val();
+			var email=$("#myemail").val();
+			var phone=$("#phone").val();
+			var address=$("#myaddr").val();
+			var country=$("#mycountry").val();
+			var pin=$("#Pincode").val()
+			var userpassword=$("#mypassword").val();
+
+			if(firstname=='' && lastname=='' && email=='' && phone=='' && address=='' && country=='' && pin=='' )
+			{
+				$("#error").html("Please fill all the fields");
+				setTimeout(function(){$("#error").hide();},6000);
+			}
+			else if(firstname!='' && lastname!='' && email!='' && phone!='' && address!='' && country=='' && pin!='')
+			{
+				$("#error").html("Select Country First");
+				setTimeout(function(){$("#error").hide();},6000);
+			}
+			else if(firstname!='' && lastname!='' && email!='' && phone!='' && address=='' && country=='' && pin=='')
+			{
+				$("#error").html("Invalid country and address and pincode");
+				setTimeout(function(){$("#error").hide();},6000);
+			}
+			else if(firstname!='' && lastname!='' && email!='' && phone=='' && address=='' && country=='' && pin=='')
+			{
+				$("#error").html("Please specify phone country and address,pincode");
+				setTimeout(function(){$("#error").hide();},6000);
+			}
+			else if(firstname!='' && lastname!='' && email=='' && phone=='' && address=='' && country=='' && pin=='')
+			{
+				$("#error").html("Invalid country address and phone number and email address and pincode");
+				setTimeout(function(){$("#error").hide();},6000);
+			}
+			else if(firstname!='' && lastname=='' && email=='' && phone=='' && address=='' && country=='' && pin=='')
+			{
+				$("#error").html("Invalid Fields Please fill all fields");
+				setTimeout(function(){$("#error").hide();},6000);
+			}
+			else if(firstname!='' && lastname=='' && email!='' && phone=='' && address=='' && country=='' && pin=='')
+			{
+				$("#error").html("Please specify lastName , Phone, address country and pincode");
+				setTimeout(function(){$("#error").hide();},6000);
+			}
+			else if(firstname!='' && lastname=='' && email=='' && phone!='' && address!='' && country=='' && pin!='')
+			{
+				$("#error").html("Please specify lastname email and country");
+				setTimeout(function(){$("#error").hide();},6000);
+			}
+			else if(firstname!='' && lastname!='' && email!='' && phone=='' && address!='' && country!='' && pin!='')
+			{
+				$("#error").html("Please specify phone number");
+				setTimeout(function(){$("#error").hide();},6000);
+			}
+			else if(firstname=='' && lastname!='' && email!='' && phone!='' && address!='' && country=='' && pin!='')
+			{
+				$("#error").html("Please specify firstname and country");
+				setTimeout(function(){$("#error").hide();},6000);	
+			}
+			else if(firstname!='' && lastname!='' && email=='' && phone!='' && address!='' && country!='' && pin=='')
+			{
+				$("#error").html("Please specify email and pincode");
+				setTimeout(function(){$("#error").hide();},6000);	
+			}
+			else if(firstname!='' && lastname=='' && email!='' && phone=='' && address!='' && country!='' && pin=='')
+			{
+				$("#error").html("Please specify lastname phone and pincode");
+				setTimeout(function(){$("#error").hide();},6000);	
+			}
+			else if(firstname=='' && lastname=='' && email!='' && phone!='' && address!='' && country!='' && pin!='')
+			{
+				$("#error").html("Please specify firstname and lastname");
+				setTimeout(function(){$("#error").hide();},6000);	
+			}
+			else if(firstname=='' && lastname=='' && email!='' && phone!='' && address!='' && country=='' && pin=='')
+			{
+				$("#error").html("Please specify firstname and lastname,country and pincode");
+				setTimeout(function(){$("#error").hide();},6000);	
+			}
+			else if(firstname!='' && lastname=='' && email!='' && phone!='' && address=='' && country!='' && pin!='')
+			{
+				$("#error").html("Please specify lastname and address");
+				setTimeout(function(){$("#error").hide();},6000);	
+			}
+			else if(firstname!='' && lastname!='' && email!='' && phone=='' && address!='' && country!='' && pin!='')
+			{
+				$("#error").html("Invalid Phone number");
+				setTimeout(function(){$("#error").hide();},3000);	
+			}
+			else if(firstname!='' && lastname!='' && email=='' && phone!='' && address!='' && country!='' && pin!='')
+			{
+				$("#error").html("Invalid Email address");
+				setTimeout(function(){$("#error").hide();},3000);	
+			}
+			else if(firstname!='' && lastname!='' && email!='' && phone!='' && address=='' && country!='' && pin!='')
+			{
+				$("#error").html("Specify your address");
+				setTimeout(function(){$("#error").hide();},3000);	
+			}
+			else if(firstname!='' && lastname!='' && email!='' && phone!='' && address!='' && country=='' && pin!='')
+			{
+				$("#error").html("Invalid Country Name");
+				setTimeout(function(){$("#error").hide();},3000);	
+			}
+			else if(firstname!='' && lastname!='' && email!='' && phone!='' && address!='' && country!='' && pin=='')
+			{
+				$("#error").html("Specify Pincode of your area");
+				setTimeout(function(){$("#error").hide();},3000);	
+			}
+			else if(firstname=='' && lastname!='' && email!='' && phone!='' && address!='' && country!='' && pin!='')
+			{
+				$("#error").html("Invalid Name");
+				setTimeout(function(){$("#error").hide();},3000);	
+			}
+			else if(firstname!='' && lastname=='' && email!='' && phone!='' && address!='' && country=='' && pin!='')
+			{
+				$("#error").html("Invalid Lastname");
+				setTimeout(function(){$("#error").hide();},3000);	
+			}
+			else if(firstname!='' && lastname!='' && email!='' && phone!='' && address!='' && country!='' && pin!='')
+			{
+				
+				$("#clicksubmit").html("<i class='fa fa-refresh fa-spin' style='color:white; font-size:25px;'></i>");
+				document.getElementById("clicksubmit").disabled=true;
+				document.getElementById("clicksubmit").style.backgroundColor="#B9ADAB";
+
+				myobj={'firstname':firstname,'lastname':lastname,'email':email,'phone':phone,'address':address,'country':country,'pin':pin,'testpassword':userpassword};
+				var rec='';
+				for(const p in myobj)
+				{
+					rec+=p+'='+myobj[p]+'&';
+				}
+				var caller=rec.slice('&',-1);
+				var clienttoken="{{csrf_token()}}";
+				$.ajax
+				({
+						url:'http://192.168.56.101:7870/register.html',
+						type:'post',
+						data: caller,
+						headers:{'X-CSRF-Token':clienttoken},
+						contentType: 'application/x-www-form-urlencoded',
+						success:function(response,statusText)
+						{
+							var dataresponse=response;
+							var errorhandler=document.getElementById("errorreturn");
+							var checklabel=document.getElementById("checker");
+							
+							if(dataresponse.error)
+							{
+								setTimeout(function()
+								{
+									checklabel.setAttribute("class","fa fa-close");
+								document.getElementById('clicksubmit').disabled=false;
+								errorhandler.innerHTML=dataresponse.message;
+								errorhandler.style.backgroundColor="red";
+								errorhandler.style.display="block";
+
+								},5000);
+
+							}
+							else
+							{
+								setTimeout(function()
+									{
+										errorhandler.style.display="block";
+										checklabel.setAttribute("class","fa fa-check");
+										errorhandler.style.backgroundColor="green";
+								},5000);
+							}
+							setTimeout(function()
+								{
+									document.getElementById("clicksubmit").disabled=false;
+									document.getElementById('clicksubmit').removeChild(document.getElementById("clicksubmit").childNodes[0]);
+									document.getElementById("clicksubmit").innerHTML="Next";
+									document.getElementById("clicksubmit").style.removeProperty('background-color');
+								},5000);
+							
+								var authorizationsender=new XMLHttpRequest()
+								authorizationsender.onreadystatechange=function()
+								{
+									if(this.readyState == 4 && this.status == 200)
+									{
+
+									}
+								}
+								authorizationsender.open("POST","http://192.168.56.101:7870/user/verification.html",true);
+								authorizationsender.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+								authorizationsender.setRequestHeader('X-CSRF-Token',clienttoken);
+								authorizationsender.send('AuthorizationBear={{AuthenticationToken}}');
+								setTimeout(function(){$("#errorreturn").hide();window.location="http://192.168.56.101:7870/user/verification.html";},8000);
+																	
+						},
+						
+						error:function(xhr,status,error)
+						{
+							setTimeout(function()
+							{
+								var buttontest=document.getElementById('clicksubmit');
+								buttontest.innerHTML="Next";
+								buttontest.disabled=false;
+						
+								$("#errorreturn").html(xhr.responseJSON.message);
+								$("#errorreturn").css('background-color','red');
+								$("#errorreturn").css('color','white');
+								buttontest.style.removeProperty('background-color');
+									$('#errorreturn').show();
+
+							$("#clicksubmit").on('click',function()
+							{
+								$("#errorreturn").hide();
+								document.getElementById("errorreturn").innerHTML = "";
+							});
+						},5000);
+					}
+						
+					
+				});
+			}
+			else if(firstname=='' && lastname=='' && email=='' && phone=='' && address=='' && country!='' && pin=='')
+			{
+				$("#error").html("Invalid Details Pleae Fill all the fields");
+				setTimeout(function(){$("#error").hide();},3000);	
+			}
+
+			else
+			{
+				$("#error").html("Please Fill all the Fields");
+				setTimeout(function(){$("#error").hide();},3000);	
+
+			}
+		});
+
+	});
+
+
+</script>
+<body style="background-image:url('static/registration.jpeg'); color:white;" onselectstart="return false">
+	<div class="container-fluid">
+	<div class="row">
+		<div class="col-lg-3"></div>
+		<div class="col-lg-6">
+			<div class="card" style="color:white;float:center;position:absolute; left:100px; background-color:black;">
+				<div class="card-header"> 
+					<center><h1> Sign up</h1>
+					<span id="errorreturn" style="display:none; font-size:15px;"><i id="checker" style="font-size:50px; color:white;"></i></span>
+				</center>
+				</div>
+				<div class="card-body">
+					<div id="registration" style="width:400px;">
+						<div class="form-group">
+							<input type="text" class="form-control" required id="myusername" placeholder="Enter the Name" maxlength="500" autocomplete="off">
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control" required id="mylastname" placeholder="Lastname" maxlength="500" autocomplete="off">
+						</div>
+			
+						<div class="form=control">
+							<input type="email" id="myemail" required class="form-control" placeholder="example@domain.com" maxlength="50" autocomplete="off">
+						</div>
+						<br>
+						<div class="form=control">
+							<input type="text" id="phone" required class="form-control" placeholder="Mobile Number" maxlength="12" autocomplete="off">
+						</div>
+						<br>
+						<div class="form=control">
+							<input type="text" id="myaddr" required class="form-control" placeholder="Locality" maxlength="200" autocomplete="off">
+						</div>
+						<br>
+						<div class="form-group">
+							<select id="mycountry" class="form-control" required>
+								<option value="" diabled="disabled" selected>Select Country</option>
+								<option value="India">India</option>
+								<option value="USA">USA</option>
+								<option value="Austrelia">Austrelia</option>
+								<option value="New York">NewYork</option>
+								<option value="NewZealand">NewZeland</option>
+								<option value="China">China</option>
+								<optino value="Finland">Finland</optino>
+								<option value="Germany">Germany</option>
+								<option value="Sierea nevada">Sierea Nevada</option>
+								<option value="Europe">Europe</option>
+								<option value="Pakistan">Pakistan</option>
+								<option value="Izrile">Izrile</option>
+								<option value="Washington">Washington</option>
+								<option value="Greece">Greece</option>
+								<option value="brazil">Brazil</option>
+								<option value="San fransico">San fransico</option>
+								<option value="Spain">Spain</option>
+							</select>
+						</div>
+						<div class="input-group form-group" id="passwordhandler">
+							<input type="password" maxlength="15" placeholder="Create Password" class="form-control" id="mypassword">
+								<span style="background-color:white;" id="visible"><i class="fa fa-eye btn btn-default" style="color:black;"></i></span>
+						</div>
+						<div class="form-group input-group" id="retypeappend">
+							<input type="password" maxlength="15" class="form-control" placeholder="retypetest" id="retypepassword">
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="Pincode" id="Pincode" required>
+						</div>
+						<a href="login.html" style="position:relative; float:right;"> If your having account please login</a>
+						<br>
+						<div class="form-group">
+							<button type="button" id="clicksubmit" name="regsubmit" class="btn btn-success btn-lg" style="width:100%;" href="#"> Next</button>
+							<p id="error" style="justify-content:center; left:125px; position:relative;"></p>
+						</div>
+						
+					</div>
+				</center>
+			</div>
+			<div class="col-lg-3"></div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,1213 @@
+<html>
+<head>
+	<title> Account Settings </title>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+ <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<script src="http://192.168.56.101:7870/static/vendor/socket.io.js"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudfare.com/ajax/libs/webcamjs/1.0.26/webcam.min.js"></script>
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,501`,500i,700,700i&display=swap" rel="stylesheet">
+<script src="https://cdn.rawgit.com/michalsnik/aos/2.0.1/dist/aos.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+</script>
+
+
+<style>
+
+#a,#b,#c,#d,#e,#f
+{
+	display:inline-block;
+	width:350px;
+}
+#mysignout
+{
+	border-top-left-radius:30px;
+	border-top-right-radius:30px;
+	border-bottom-right-radius: 30px;
+	border-bottom-left-radius: 30px;
+	height:50px;
+	width:50%;
+}
+#mylogout
+{
+	border-top-left-radius:30px;
+	border-top-right-radius:30px;
+	border-bottom-right-radius: 30px;
+	border-bottom-left-radius: 30px;
+	height:50px;
+	width:50%;
+	background-color:#B5E7D1;
+
+}
+
+</style>
+<script>
+//Webcam.init();
+
+
+	$(window).on('resize load unload',function()
+	{
+				var newxml=new XMLHttpRequest();
+				newxml.onreadystatechange=function()
+				{
+					if(this.readyState == 4 && this.status==200)
+					{
+						var jsonobject=JSON.parse(this.responseText);
+						$("#1").val(jsonobject.firstname)
+						$("#1").html('failed');
+						
+						$("#2").val(jsonobject.lastname);
+						$("#2").attr('disabed',true);
+
+						$("#3").val(jsonobject.mobile);
+						$('#3').attr('disabled',true);
+
+						$("#4").val(jsonobject.email);
+						$('#4').attr('disabled',true);
+
+
+						$("#5").val(atob(jsonobject.Password));
+						$("#5").attr('disabled',true);
+
+
+					}	
+				};
+				newxml.open("POST","http://192.168.56.101:7870/user/{{userid}}/RealTime",true);
+				newxml.setRequestHeader("Content-Type",'application/x-www-form-urlencoded');
+				newxml.setRequestHeader("X-CSRF-Token","{{csrf_token()}}");
+				newxml.send('CurrentUserID={{userid}}'+'&'+'EmailID='+$('.form-group li input[type=email]').val()); 
+
+			$("#mybtn").click(function()
+			{
+				
+				
+				if($("#mysearch").val()!="")
+				{
+
+					var searchvalue=$("#mysearch").val();
+					var appender=document.getElementById("usermsg");
+					var msghandler=document.createElement("div");
+					msghandler.setAttribute("class","alert alert-secondary justify-content-end col-md-3");
+					msghandler.style.width="auto";
+					msghandler.style.float="right";
+					msghandler.innerHTML=searchvalue+'&nbsp;'+"<i class='fa fa-check' style='color:blue;'></i>";
+					appender.appendChild(msghandler);
+					document.getElementById("mysearch").value="";
+				}
+
+			});
+
+		if(navigator.userAgent.match("Android"))
+		{
+			$("#fullcard").css({'width':'600px','position':'relative','left':'150px','top':'-50px'});
+			$("#1, #2,#3,#4,#5,#6").css("width",'500px');
+		}	
+		else
+		{
+			if(window.innerWidth <=701 && window.innerWidth >=501)
+			{
+				$("#goli").css({'width':"175px"});
+				$("#a,#b,#c,#d,#d,#e").css({'width':'150px'});
+				$("ul > li").css({'width':'10px'});
+				$("#fullcard").css({"width":"300px","left":'150px'});
+
+			}
+			else if(window.innerWidth >= 800 && window.innerWidth<=1000)
+			{
+				$("#fullcard").css({"width":"70%","position":'relative',"left":"400px"});
+					$("#1, #2,#3,#4,#5,#6").css("width",'600px');
+
+				$("#saving,#canceling").css({'position':'relative','width':'400px'});
+
+			}
+			else if(window.innerWidth <= 500)
+			{
+
+			}
+			else
+			{
+				/*
+				function testingcam()
+				{
+				$("#mycamera").on('click',function()
+				{
+					Webcam.set({
+						width:300,
+						height: 300,
+						image_format:'jpeg',
+						jpeg_quality: 90
+					});
+					webcam.attach("#webcamset");
+
+				});
+				}
+				*/
+				$(".form-group input[type=file]").change(function()
+				{
+					var srchandler=$(this).get(0).files[0];
+					var imagehandler=document.createElement("img");
+					imagehandler.style.height="200px";
+					imagehandler.style.width="200px";
+					imagehandler.style.borderRadius="50%";
+
+
+					var filereader=new FileReader();
+					filereader.onload=function()
+					{
+						imagehandler.setAttribute("src",filereader.result);
+
+					}
+					filereader.readAsDataURL(srchandler);
+
+					document.getElementById("imagelabel").removeChild(document.getElementById("imagelabel").childNodes[0]);
+					document.getElementById("imagelabel").appendChild(imagehandler);
+				});
+				$(".form-group li input[type=text] input[type=email] input[type=password]").css({'background-color':'#ccd1d1'});
+				$("#notibell").css({'font-size':'50px','color':'#7A5333'});
+				$("#notitext").css({'font-size':'35px'});
+				$("#emoji").css({"height":"200px",'overflow':'scroll'});
+				$("#alignitem > li").css({"margin-right":'8px','list-style':'none'});
+				$("#myimg,#camid,#myattach,#papericon,#checker").css({"font-size":"30px",'color':'#34495e'});
+				$("#mycardbody").css({"height":"300px",'overflow':'scroll'});
+				$("#mysearch").css({"width":"800px",'height':'50px'});
+				$("#mybtn").css({"height":"50px",'border-radius':'50%'});
+
+				$("#yes").css({"width":'500px','border-radius':'20px'});
+				$("#no").css({"width":"500px",'background-color':'#D5DBDB','border-radius':'20px'});
+				$("#fullcard").css("width","100%");
+					$("#1, #2,#3,#4,#5,#6").css("width",'600px');
+
+				$("#saving,#canceling").css({'position':'relative','width':'200px'});
+			}
+		}	
+		
+		$("#t").html('Account Settings');
+
+		$("#a").on('click',function()
+			{
+				$("#t").html("Account Settings")
+			});
+
+		$("#b").on('click',function()
+		{
+			$("#t").html('Notification');
+		});
+		$("#c").on('click',function()
+		{
+		$("#t").html('Message');
+		});
+		$("#d").on('click',function()
+		{
+			$("#t").html('Help Center');
+		});	
+		$("#e").on('click',function()
+		{
+			$("#t").html('Logout');
+		});	
+		$(".dropdown-menu .row .col-lg-1").children().click(function()
+		{
+			$("#mysearch").val($("#mysearch").html()+$(this).html());
+		});	
+		
+	});
+
+	</script>
+
+
+
+<body id="mybody" onselectstart="return false">
+	<div id="webcamset"></div>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-lg-3">
+				<br></br>
+				<div class="jumbotron" style="height:500px; background-color:black; position:fixed; width:300px;" id="goli">
+					<ul class="nav flex-column nav-pills" style="list-style:none;border-bottom:0px;" onselectstart="return false;" role="tablist" id="tabchanger">
+						<li><a href="#first" id="a" style="color:white; width:250px;" class="nav-link active" role="pills" data-toggle="pill"> <i class="fa fa-user-circle"></i>&nbsp;&nbsp;Profile</a></li>
+						<br>
+						<li><a href="#second" id="b" style="color:white; width:250px;" class="nav-item nav-link" data-toggle="pill"><i class="fa fa-bell"></i>&nbsp;&nbsp;Notification</a></li>
+						<br>
+						<li><a href="#third" id="c" style="color:white; width:250px;" class="nav-item nav-link" data-toggle="pill"><i class="fa fa-envelope"></i>&nbsp;&nbsp;Message</a></li>
+						<br>
+						<li><a href="#fourth" id="d" style="color:white; width:250px;" class="nav-item nav-link" data-toggle="pill"> <i class="fa fa-question-circle"></i>&nbsp;&nbsp;Help</a></li>
+						<br>
+						<li><a href="#fifth" id="e" style="color:white; width:250px;" class="nav-item nav-link" data-toggle="pill"><i class="fa fa-sign-out-alt"></i>&nbsp;&nbsp;Logout</a></li>
+
+					</ul>
+				</div>
+			</div>
+
+			<div class="col-lg-9">
+				<br></br>
+				<div class="card" id="fullcard" style="border:1px solid;">
+					<div class="card-header">
+						<center><h1 id="t" class="justify-content-center"></h1></center>
+						</div>
+						<span id="updateresponse"></span>
+						<span id="detailresponse"></span>
+						<span class="spinner-grow text-info" id="myspinner"  style="display:none;" role="status">
+							<span class="sr-only"></span>
+						</span>
+						<div class="card-body">
+							<div class="tab-content">
+								<div class="tab-pane show in active" id="first">
+									
+									<center>
+									<script>
+										function postvalue()
+										{
+													var firstname=$("#1").val();
+													var secondname=$("#2").val();
+													var mobilehandle=$("#3").val();
+													var emailaddress=$("#4").val();
+													var password=$("#5").val();
+
+													var xml=new XMLHttpRequest();
+													xml.onreadystatechange=function()
+													{
+														if(this.readyState == 4 && this.status == 200)
+														{
+															var myresponse=JSON.parse(this.responseText).message;
+															document.getElementById("detailresponse").innerHTML="<center><div class='alert alert-success'><i class='fa fa-check'></i>Successfully Updated</div></center>";
+														}
+														else
+														{
+															var myresponse=JSON.parse(this.responseText).message;
+															document.getElementById("detailresponse").innerHTML="<center><div class='alert alert-danger'><i class='fa fa-close'></i>Somethingis Wrong Please try again after few minutes</div></center>";
+
+														}
+													}
+													xml.open("PUT","http://192.168.56.101:7870/user/{{userid}}/EditDetail",true);
+													xml.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+													xml.setRequestHeader('X-CSRF-Token','{{csrf_token()}}');
+													xml.send("Firstname="+firstname+'&'+'Lastname='+secondname+'&'+'Mobile='+mobilehandle+'&'+'Email='+emailaddress+'&'+'Userid={{userid}}'+'&'+'Password='+password);
+										}
+										function postfunction()
+												{
+												
+																// update form according to user requirment
+														
+																var myformdata=new FormData();
+																var fileupload=$('#filebtn')[0].files[0];
+																myformdata.append('filebtn',fileupload)
+															
+
+																$.ajax({
+																			url:"http://192.168.56.101:7870/user/{{userid}}/EditDetail",
+																			method:'POST',
+																			data:myformdata,
+																			processData:false,
+																			contentType:false,
+																			enctype: 'multipart/form-data',
+																			headers:{'X-CSRF-Token':'{{csrf_token()}}'},
+																			success:function(response,statustext)
+																			{
+
+																				var updateresponsehandler=response.message;
+																				if(updateresponsehandler =="Successfully Updated")
+																				{
+																					document.getElementById("updateresponse").innerHTML="<center><div class='alert alert-success'><i class='fa fa-check'></i>&nbsp;&nbsp;Successfully Updated Profile Picture </div></center>'";
+																					postvalue();
+
+																				}
+																				else
+																				{
+																					document.getElementById("updateresponse").innerHTML="<center><div class='alert alert-danger'><i class='fa fa-close'></i>&nbsp;&nbsp;Failed to Update Profile Picture</div></center>'";
+																					postvalue();
+																					console.log(response);
+
+																				}
+
+																				var newxml=new XMLHttpRequest();
+																				newxml.onreadystatechange=function()
+																				{
+																					if(this.readyState == 4 && this.status==200)
+																					{
+																						var jsobject=JSON.parse(this.responseText);
+																						$("#1").val(jsonobject.firstname);
+																						$("#2").val(jsonobject.lastname);
+																						$("#3").val(jsonobject.mobile);
+																						$("#4").val(jsonobject.email);
+																						$("#5").val(atob(jsonobject.Password));
+
+																					}
+																				};
+																				newxml.open("POST","http://192.168.56.101:7870/user/{{userid}}/RealTime",true);
+																				newxml.setRequestHeader("Content-Type",'application/x-www-form-urlencoded');
+																				newxml.setRequestHeader("X-CSRF-Token","{{csrf_token()}}");
+																				newxml.send('CurrentUserID={{userid}}'+'&'+'EmailID='+$('.form-group li input[type=email]').val()); 	
+
+																				
+																				
+																			}																		
+																});
+															setTimeout(function(){$("#updateresponse,#detailresponse").hide();},6000);
+												}	
+											
+												function mydisabled()
+												{
+													$(".form-group li input[type=text]").attr('disabled',false);
+													$(".form-group li input[type=email]").attr('disabled',false);
+													$(".form-group li input[type=password]").attr('disabled',false);
+
+													$("#saving").attr('disabled',false);
+													$("#canceling").attr('disabled',false);
+													$('#filebtn').attr('disabled',false);
+
+												}
+
+									</script>
+									<form class="form-group" enctype="multipart/form-data" id="formdata">
+										<a href="#" style="position:relative;float:right;"class="btn btn-link btn-lg" onclick="mydisabled();">Edit Details </a>
+										<label for="filebtn" id="imagelabel"><i class="fa fa-user-circle" style="font-size:150px;color:#ccd1d1;"></i></label>
+										<input type="file" disabled="true" id="filebtn" hidden accept="image/*">
+									<center>
+									<ul class="form-group" style="list-style:none;">
+										<li ><input type="text" class="form-control" disabled="true" autocomplete="off" id="1" maxlength="50" placeholder="Firstname"></li>
+										<br>
+										<li><input type="text" class="form-control" disabled="true" autocomplete="off" id="2" maxlength="50" placeholder="Lastname"></li>
+										<br>
+										<li><input type="text" class="form-control" disabled="true"  maxlength="15" id="3" autocomplete="off" placeholder="Mobile No"></li>
+										<br>
+										<li><input type="email" class="form-control" disabled="true" maxlength="30" id="4" autocomplete="off" placeholder="Email Address"></li>
+										<br>
+										<li><input type="password" class="form-control" disabled="true" maxlength="30" id="5" autocomplete="off" placeholder="Password"></li>
+									</ul>
+								</center>
+								</form>
+									<br>
+									
+									<button type="button" disabled="true" class="btn btn-lg btn-success" id="saving" onclick="javascript:setTimeout(function(){postfunction();},3000);document.getElementById('spinner').style.display='block'">Save</button>
+									<button type="button"  disabled="true" class="btn btn-lg btn-danger" id="canceling">Cancel</button></center>
+								</div>
+								<div class="tab-pane fade" id="second">
+									<center>
+										<i class="fa fa-bell" id="notibell"></i>
+										<br>
+										<span id="notitext">No Notifications</span>
+									</center>
+								</div>
+								<div class="tab-pane fade" id="third">
+									<script>
+										var sockethandler=new WebSocket("ws://192.168.56.101:7870/");
+										sockethandler.onopen=function(event)
+										{
+											sockethandler.send("failedtobind");
+											console.log(event);
+										};
+										function setter()
+										{
+										
+											sockethandler.onmessage=function(msg)
+											{
+												alert();
+												/*
+												console.log(msg);
+												var respappend=document.getElementById("mycardbody");
+												var responsehandler=document.createElement("div");
+												responsehandler.style.css({'float':'left'});
+												responsehandler.setAttribute("class","alert alert-warning");
+												responsehandler.innerHTML=msg;
+												*/
+											
+											};
+										}
+									</script>
+									<div class="card">
+										<div class="card-header" style="background-color:#030200; height:50px;">
+											<div class="dropdown">
+												<a type="button" class="dropdown-toggle" data-toggle="dropdown" data-target="#mymenu" >
+												 	<i class="fa fa-ellipsis-v"  style="color:#f57420; float:right; margin-left:20px;"></i>
+												 </a>
+												<div class="dropdown-menu dropdown-menu-right" id="mymenu">
+													<a type="button" class="dropdown-item">Block</a>
+													<a type="button" class="dropdown-item">Add to Contact</a>
+												</div>
+											</div>
+
+											<a type="button"><i class="fa fa-video-camera" style="color:#f57420; float:right; margin-left:10px;"></i></a>
+											<a type="button"><i class="fa fa-phone" style="color:#f57420; float:right; margin-right:10px;"></i></a>
+										</div>
+										<div class="card-body"  id="mycardbody" style="background-color:#acc9dd; overflow:hidden;">
+											<center>
+												<span id="date" class="alert alert-success" role='alert()'></span>
+												<br></br>
+												<script>
+													var datehandler=new Date();
+													document.getElementById("date").innerHTML=datehandler.getDate()+"-"+datehandler.getMonth()+"-"+datehandler.getYear();
+												</script>
+											</center>
+											<br></br>
+											<span id="usermsg"></span>
+										</div>
+										<div class="card-footer form-inline">
+											<input type="text" id="mysearch" class="form-control" required autocomplete="off" placeholder="Type Your Message..." maxlength="1000">
+											<button type="button" id="mybtn" onclick="setter();" class="btn btn-lg btn-primary"><i class="fa fa-paper-plane"></i></button>
+											<br>
+											<ul id="alignitem" class="nav nav-flex-column">
+												<li><label for="myupload"><i class="fa fa-picture-o" id="myimg"></i></label></li>
+											
+												<li><input type="file" id="myupload" hidden accept="image/*"></li>
+											
+												<li><i class="fa fa-camera" id="camid" onclick="camfunction();"></i></li>
+												<label for="myattach"><i class="fa fa-paperclip" id="papericon"></i></label>
+												<li><input type="file" id="myattach" hidden></li>
+												<li><div class="dropup">
+													<a type="button" class="fa fa-smile-o dropdown-toggle" id="checker" data-toggle="dropdown" aria-haspopup="true"><i id="lasticon"></i></a>
+
+													<div class="dropdown-menu" style="width:200px;" id="emoji">
+														<div class="row">
+															<div class="col-lg-1">
+																<a type="button">&#128512</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128513</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128514</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128515</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128516</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128517</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128518</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128519</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128520</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128521</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128522</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128523</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128524</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128525</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128526</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128527</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128528</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128529</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128530</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128531</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128532</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128533</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128534</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128535</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128536</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128537</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128538</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128539</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128540</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128541</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128542</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128543</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128544</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128545</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128546</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128547</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128548</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128549</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128550</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128551</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128552</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128553</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128554</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128555</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128556</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128557</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128558</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128559</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128560</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128561</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128562</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128563</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128564</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128565</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128566</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128567</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128568</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128569</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128570</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128571</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128572</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128573</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128574</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128575</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128576</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128577</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128578</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128579</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128580</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128581</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128582</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128583</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128584</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128585</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128586</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128587</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128588</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128589</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128590</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128591</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128592</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128593</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128594</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128595</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128596</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128597</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128598</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128599</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128600</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128601</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128602</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128603</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128604</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128605</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128606</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128607</a>
+															</div>
+																<div class="col-lg-1">
+																<a type="button">&#128608</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128609</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128610</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128611</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128612</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128613</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128614</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128615</a>
+															</div>
+																<div class="col-lg-1">
+																<a type="button">&#128616</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128617</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128618</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128619</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128620</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128621</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128622</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128623</a>
+															</div>
+																<div class="col-lg-1">
+																<a type="button">&#128624</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128625</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128626</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128627</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128628</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128629</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128630</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128631</a>
+															</div>
+																<div class="col-lg-1">
+																<a type="button">&#128632</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128633</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128634</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128635</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128636</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128637</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128638</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128639</a>
+															</div>
+																<div class="col-lg-1">
+																<a type="button">&#128640</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128641</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128642</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128643</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128644</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128645</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128646</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128647</a>
+															</div>
+																<div class="col-lg-1">
+																<a type="button">&#128648</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128649</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128650</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128651</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128652</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128653</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128654</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128655</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128656</a>
+															</div>
+																<div class="col-lg-1">
+																<a type="button">&#128657</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128658</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128659</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128660</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128661</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128662</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128663</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128664</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128665</a>
+															</div>
+																<div class="col-lg-1">
+																<a type="button">&#128666</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128667</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128668</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128669</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128670</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128671</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128672</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128673</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128674</a>
+															</div>
+																<div class="col-lg-1">
+																<a type="button">&#128675</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128676</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128677</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128678</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128679</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128680</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128681</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128682</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128683</a>
+															</div>
+																<div class="col-lg-1">
+																<a type="button">&#128684</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128685</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128686</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128687</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128688</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128689</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128690</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128691</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128692</a>
+															</div>
+																<div class="col-lg-1">
+																<a type="button">&#128693</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128694</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128695</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128696</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128697</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128698</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128699</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128700</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128701</a>
+															</div>
+																<div class="col-lg-1">
+																<a type="button">&#128702</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128703</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128704</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128705</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128706</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128707</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128708</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128709</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128710</a>
+															</div>
+																<div class="col-lg-1">
+																<a type="button">&#128711</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128712</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128713</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128714</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128715</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128716</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128717</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128718</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128719</a>
+															</div>
+																<div class="col-lg-1">
+																<a type="button">&#128720</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128721</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128722</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128723</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128724</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128725</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128726</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128727</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128728</a>
+															</div>
+																<div class="col-lg-1">
+																<a type="button">&#128729</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128730</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128731</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128732</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128733</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128734</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128735</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128736</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128737</a>
+															</div>
+																<div class="col-lg-1">
+																<a type="button">&#128738</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128739</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128740</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128341</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128642</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128643</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128644</a>
+															</div>
+															<div class="col-lg-1">
+																<a type="button">&#128645</a>
+															</div>
+
+														</div>
+												</div></li>
+											</ul>
+										
+										</div>
+
+									</div>
+								</div>
+								<div class="tab-pane fade" id="fourth">
+									<ul style="list-style:none; color:blue;">
+										<li><a href="http://192.168.56.101:7870/user/HelpSupport/{{userid}}/techsupport.html" class="btn btn-link">1. Technical Support</a></li>
+										<br>
+										<li><a href="http://192.168.56.101:7870/user/HelpSupport/{{userid}}/privacy.html" class="btn btn-link">2. Privacy</a></li>
+										<br>
+										<li><a href="http://192.168.56.101:7870/user/HelpSupport/{{userid}}/accountdeactivation.html" class="btn btn-link">3. Account Deactivation</a></li>
+										<br>
+										<li><a href="http://192.168.56.101:7870/user/HelpSupport/{{userid}}/shopcard.html" class="btn btn-link">4. Shopping card</a></li>
+										<br>
+										<li><a href="#" class="btn btn-link">5. Our Documentation</a></li>
+									</ul>
+								</div>
+								<div class="tab-pane fade" id="fifth">
+									<center>
+										<button type="button" class="btn btn-lg btn-primary" id="yes">Yes</button>
+										<br></br>
+										<button type="button" class="btn btn-lg btn-default" id="no">No</button>
+									</center>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		
+</body>
+</html>
